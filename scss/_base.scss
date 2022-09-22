@@ -1,0 +1,29 @@
+/*------------------------------------------------
+    ファイル名：_base.scss
+    機能：ベーススタイルを記述する
+--------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #222222;
+    font-family: "Noto Serif", "Noto Serif JP",sans-serif;
+    line-height: 1.5;
+    margin: 0;
+}
+
+button, input, select, textarea{
+    font-family: inherit;
+    font-size: 100%;
+}
+
+a {
+    color: #0069ff;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}

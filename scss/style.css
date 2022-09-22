@@ -1,0 +1,640 @@
+@charset "UTF-8";
+/*------------------------------------------------
+    ファイル名：_variables.scss
+    機能：変数を記述する
+--------------------------------------------------*/
+/*------------------------------------------------
+    ファイル名：_mixin.scss
+    機能：mixinを記述する
+--------------------------------------------------*/
+/*--- line-heightを調節する（XDとwebで仕様が異なるため） ---*/
+/*------------------------------------------------
+    ファイル名：_base.scss
+    機能：ベーススタイルを記述する
+--------------------------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #222222;
+  font-family: "Noto Serif", "Noto Serif JP", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+a {
+  color: #0069ff;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/*------------------------------------------------
+    ファイル名：_main.scss
+    機能：webページ全体のスタイルを記述する
+--------------------------------------------------*/
+/*----------------------
+  レイアウト
+------------------------*/
+/*--- ヘッダー ---*/
+.ly_header {
+  position: relative;
+  z-index: 99;
+  width: 100vw;
+  padding: 19px 0;
+}
+
+/* Contactページ用 */
+.ly_header__contact {
+  padding: 40px 0;
+}
+
+/* 途中から背景色をつける */
+.ly_header__bg {
+  position: fixed;
+  padding: 30px 0;
+  background-color: #282f35;
+}
+
+.ly_header_inner {
+  display: flex;
+  padding: 0 120px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*--- コンテンツ ---*/
+.ly_main {
+  position: absolute;
+  top: 0;
+}
+
+.ly_section {
+  width: 100vw;
+}
+
+.ly_cont {
+  padding: 100px 120px 70px 120px;
+}
+
+.ly_cont__pt104 {
+  padding-top: 104px;
+}
+
+.ly_cont_inner {
+  padding: 80px 100px 70px 100px;
+  margin: 0 auto;
+}
+
+.ly_cont_inner__pt70 {
+  padding-top: 70px;
+}
+
+.ly_cont_full {
+  width: 100vw;
+  padding: 80px 0 70px 0;
+  margin: 0 calc(50% - 50vw);
+}
+
+/*--- フッター ---*/
+.ly_footer {
+  position: absolute;
+  z-index: 99;
+  width: 100vw;
+  padding: 30px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* フッターの位置合わせ（ページごとに合わせる） */
+.pg_top .ly_footer {
+  top: 4143px;
+}
+
+.pg_contact .ly_footer {
+  top: 1262px;
+}
+
+/*----------------------
+  モジュール
+------------------------*/
+/*--- サイトタイトル ---*/
+.el_sitettl {
+  margin: 0;
+  /* フォント指定 */
+  color: #ffffff;
+  font-size: 1.625em;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  line-height: 1.384615;
+}
+.el_sitettl a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+/*--- ヘッダーナビゲーション ---*/
+.bl_headerNav .bl_headerNav_inner {
+  display: flex;
+  margin: 0;
+  list-style: none;
+}
+.bl_headerNav .bl_headerNav_inner > *:last-child {
+  margin-right: 0;
+}
+.bl_headerNav .bl_headerNav_inner > li {
+  margin-right: 30px;
+}
+.bl_headerNav .bl_headerNav_link {
+  /* フォント指定 */
+  color: #ffffff;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  line-height: 1.375;
+  text-decoration: none;
+}
+
+/*--- メインビジュアル ---*/
+.bl_jumbotron {
+  /*    position: absolute;
+  top: 0; */
+  height: 100vh;
+  width: 100vw;
+}
+.bl_jumbotron .bl_jumbotron_slide {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.bl_jumbotron_slideItem img {
+  width: 100%;
+}
+
+.bl_jumbotron_inner {
+  display: flex;
+  margin-left: 120px;
+}
+
+.bl_jumbotron_txt {
+  position: absolute;
+  top: 409px;
+  text-align: center;
+}
+
+.bl_jumbotron_maincopy {
+  z-index: 10;
+  margin: 0;
+  /* フォント指定 */
+  color: #ffffff;
+  font-size: 4.375rem;
+  font-weight: bold;
+  /* ★カンプの値に合わせるなら、0.714286 */
+  line-height: 0.714286;
+  letter-spacing: 0.05em;
+  /*1.357142*/
+}
+
+.bl_jumbotron_subcopy {
+  padding-top: 20px;
+  margin: 0;
+  /* フォント指定 */
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  /* ★カンプに合わせるなら、1.25 */
+  line-height: 1.25;
+  letter-spacing: 0.05em;
+  /*1.425*/
+}
+
+/*--- タイトル（h2） ---*/
+.el_h2Heading {
+  margin: 0;
+  /* フォント指定 */
+  font-weight: bold;
+  font-style: italic;
+  font-size: 3.75rem;
+  letter-spacing: 0.05em;
+  /* ★カンプの値に合わせるなら、0.4 */
+  line-height: 1.36;
+  /* Works用タイトル */
+  /* Service用タイトル */
+  /* Contact用タイトル */
+}
+.el_h2Heading > span {
+  position: relative;
+  display: inline-block;
+  padding-right: 233px;
+  margin-left: 100px;
+}
+.el_h2Heading > span::after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 5px;
+  width: 200px;
+  transform: translateY(-50%);
+  content: "";
+  background-color: #000000;
+}
+.el_h2Heading.el_h2Heading__works {
+  color: #ffffff;
+  letter-spacing: 0.1em;
+}
+.el_h2Heading.el_h2Heading__works > span {
+  padding-right: 248px;
+}
+.el_h2Heading.el_h2Heading__works > span::after {
+  background-color: #ffffff;
+}
+.el_h2Heading.el_h2Heading__service {
+  letter-spacing: 0.1em;
+}
+.el_h2Heading.el_h2Heading__service > span {
+  padding-right: 229px;
+}
+.el_h2Heading.el_h2Heading__contact {
+  padding-top: 9px;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+}
+.el_h2Heading.el_h2Heading__contact > span {
+  padding-right: 231px;
+}
+.el_h2Heading.el_h2Heading__contact > span::after {
+  background-color: #ffffff;
+}
+
+/*--- メッセージ（主張） ---*/
+.el_msg {
+  margin: 0;
+  text-align: center;
+  /* フォント指定 */
+  font-weight: bold;
+  font-size: 1.875rem;
+  letter-spacing: 0.05em;
+  line-height: 1.666666;
+}
+
+/*--- メディア ---*/
+.bl_media {
+  display: flex;
+  align-items: center;
+}
+.bl_media .bl_media_body {
+  width: 44%;
+  margin-right: 12%;
+}
+.bl_media .bl_media_txt {
+  /* フォント指定 */
+  font-weight: bold;
+  line-height: 1.875;
+  letter-spacing: 0.05em;
+}
+.bl_media .bl_media_imgWrapper {
+  width: 44%;
+  margin: 0;
+}
+
+/*--- 半透明テキスト ---*/
+.el_opacityTxt {
+  opacity: 5%;
+  /* フォント指定 */
+  color: #171717;
+  font-size: 5.625em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  /* カンプに合わせるなら1.666666 */
+  line-height: 1.355555;
+}
+
+.el_opacityTxt__white {
+  opacity: 10%;
+  color: #ffffff;
+}
+
+/*--- 背景画像 ---*/
+.el_bgimg {
+  background-position: center center;
+  background-size: cover;
+}
+.el_bgimg.el_bgimg__works {
+  background-image: url(../img/works-bgi@2x.jpg);
+}
+.el_bgimg.el_bgimg__contact {
+  background-image: url(../img/contact-bgi@2x.jpg);
+}
+
+/*--- カード ---*/
+.bl_card {
+  box-shadow: 0 0 6px #000000;
+  background-color: #ffffff;
+}
+.bl_card .bl_card_imgWrapper {
+  margin: 0;
+}
+.bl_card .bl_card_imgWrapper > img {
+  width: 100%;
+}
+.bl_card .bl_card_body .bl_card_txt {
+  margin: 25px 20px;
+  letter-spacing: 0.05em;
+  line-height: 1.875;
+}
+
+.bl_cardUnit__col3 > .bl_card {
+  width: 32%;
+  margin-right: 2%;
+  margin-bottom: 25px;
+  /* 相殺対象（★） */
+}
+.bl_cardUnit__col3 > .bl_card:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+.bl_cardUnit {
+  display: flex;
+  flex-wrap: wrap;
+}
+.bl_cardUnit.bl_cardUnit__col3 {
+  /* カードが複数行に渡った時、最下部のマージンを相殺（★） */
+  margin-bottom: -25px;
+}
+
+/*--- ボタン ---*/
+.el_roundedBtn {
+  display: inline-block;
+  height: 59px;
+  width: 235px;
+  box-sizing: border-box;
+  text-decoration: none;
+  background-color: #f7d43f;
+  text-align: center;
+  /* フォント指定 */
+  color: #171717;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 1.875;
+  box-shadow: 0 0 6px #1b1310;
+  border-radius: 29.5px;
+  border: none;
+}
+
+/*--- 画像付きリンク ---*/
+.bl_imgLinks {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-wrap: nowrap;
+  list-style: none;
+}
+.bl_imgLinks .bl_imgLinks_img {
+  flex: 1;
+  background-position: center center;
+  background-size: cover;
+  aspect-ratio: 3/2;
+}
+.bl_imgLinks .bl_imgLinks_img.bl_imgLinks_img__hearing {
+  background-image: url(../img/service-img01@2x.jpg);
+}
+.bl_imgLinks .bl_imgLinks_img.bl_imgLinks_img__planning {
+  background-image: url(../img/service-img02@2x.jpg);
+}
+.bl_imgLinks .bl_imgLinks_img.bl_imgLinks_img__direction {
+  background-image: url(../img/sevice-img03@2x.jpg);
+}
+.bl_imgLinks .bl_imgLinks_link {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding-top: 135px;
+  text-decoration: none;
+  text-align: center;
+  /* フォント指定 */
+  color: #ffffff;
+  font-size: 2.5em;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+}
+.bl_imgLinks .bl_imgLinks_link:hover {
+  background-color: rgba(40, 47, 53, 0.7);
+}
+
+/*--- CTAエリア ---*/
+.bl_cta_txt {
+  margin-top: 0;
+  margin-bottom: 40px;
+  text-align: center;
+  /* フォント指定 */
+  color: #ffffff;
+  font-size: 1.25em;
+  line-height: 1.45;
+  letter-spacing: 0.05em;
+}
+
+/*--- フッター ---*/
+.el_copyRight {
+  margin: 0;
+  /* フォント指定 */
+  font-size: 0.875em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  /* カンプに合わせるなら2.142857 */
+  line-height: 1.357143;
+}
+
+/*--- Contactページ ---*/
+/*--- メインビジュアル ---*/
+.bl_mainVisual {
+  position: relative;
+  height: 453px;
+  width: 100vw;
+  background-image: url(../contact/img/contact-page-bgi@2x.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.bl_mainVisual .el_opacityTxt {
+  position: absolute;
+  bottom: 40px;
+  left: 48px;
+}
+
+/*--- ページタイトル ---*/
+.el_pageTitle {
+  /* 上下中央揃え */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  /* フォント指定 */
+  font-size: 3.75em;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 1.7;
+  /* ★カンプに合わせるなら、0.8 */
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+/*--- お問い合わせフォーム ---*/
+.bl_contactForm {
+  padding: 97px 30px 80px 30px;
+  margin: 0 auto;
+  max-width: 760px;
+}
+
+.bl_contactForm_item {
+  margin-bottom: 21px;
+}
+.bl_contactForm_item input[type=text],
+.bl_contactForm_item input[type=tel],
+.bl_contactForm_item input[type=email],
+.bl_contactForm_item textarea {
+  width: 100%;
+  border: 1px solid #141414;
+  /* 元のデザインを消去 */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.bl_contactForm_item input[type=text],
+.bl_contactForm_item input[type=tel],
+.bl_contactForm_item input[type=email] {
+  height: 30px;
+}
+.bl_contactForm_item textarea {
+  display: block;
+  height: 171px;
+}
+
+/* 項目名 */
+.bl_contactForm_ttl {
+  display: block;
+  margin: 0 0 4px 0;
+  /* フォント指定 */
+  font-family: "Noto Serif", sans-serif;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  /* カンプに合わせるなら1.875 */
+  line-height: 1.4375;
+}
+
+/* チェックボックスを横並びにする */
+.bl_checkboxUnit {
+  display: flex;
+}
+
+/* チェックボックス */
+.bl_checkbox {
+  display: inline-flex;
+  align-items: center;
+}
+.bl_checkbox input[type=checkbox] {
+  position: relative;
+  height: 10px;
+  width: 10px;
+  margin: 0 10px 0 0;
+  /* 元のデザインを消去 */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  /* ボックスデザインを定義 */
+  /* チェックマークデザインを定義 */
+}
+.bl_checkbox input[type=checkbox]::before {
+  position: absolute;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  content: "";
+  box-sizing: border-box;
+  border: 1px solid #141414;
+}
+.bl_checkbox input[type=checkbox]::after {
+  position: absolute;
+  display: inline-block;
+  /* チェックマーク */
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 0.5em;
+  opacity: 0;
+}
+.bl_checkbox input[type=checkbox]:checked::after {
+  opacity: 1;
+}
+.bl_checkbox label {
+  display: inline-block;
+  margin-right: 20px;
+  letter-spacing: 0.05em;
+  line-height: 1.4375;
+}
+
+/*--- 色指定 ---*/
+.bg_gray30 {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(23, 23, 23, 0.3);
+}
+
+/*--- 右揃え ---*/
+.ta_right {
+  text-align: right !important;
+}
+
+/*--- 中央揃え ---*/
+.ta_center {
+  text-align: center;
+}
+
+/* パディング指定 */
+.hp_pb60 {
+  padding-bottom: 60px !important;
+}
+
+.hp_pb70 {
+  padding-bottom: 70px !important;
+}
+
+.hp_pb80 {
+  padding-bottom: 80px !important;
+}
+
+/* マージン指定 */
+.hp_mb2 {
+  margin-bottom: 2px !important;
+}
+
+.hp_mb3 {
+  margin-bottom: 3px !important;
+}
+
+.hp_mb20 {
+  margin-bottom: 20px !important;
+}
+
+.hp_mb80 {
+  margin-bottom: 80px;
+}
+
+/*------------------------------------------------
+    ファイル名：_responsive.scss
+    機能：レスポンシブのスタイルを記述する
+--------------------------------------------------*/
+/*# sourceMappingURL=style.css.map */
