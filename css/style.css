@@ -7,7 +7,14 @@
     ファイル名：_mixin.scss
     機能：mixinを記述する
 --------------------------------------------------*/
-/*--- line-heightを調節する（XDとwebで仕様が異なるため） ---*/
+/*----------
+    line-heightを調節する（XDとwebで仕様が異なるため） 
+    $line-height: line-heightの指定値
+----------*/
+/*----------
+    letter-spacingを調節する（XDとwebで仕様が異なるため） 
+    $letter-spacing: letter-spacingの指定値
+----------*/
 /*------------------------------------------------
     ファイル名：_base.scss
     機能：ベーススタイルを記述する
@@ -46,7 +53,7 @@ img {
 ------------------------*/
 /*--- ヘッダー ---*/
 .ly_header {
-  position: relative;
+  position: absolute;
   z-index: 99;
   width: 100vw;
   padding: 19px 0;
@@ -72,11 +79,6 @@ img {
 }
 
 /*--- コンテンツ ---*/
-.ly_main {
-  position: absolute;
-  top: 0;
-}
-
 .ly_section {
   width: 100vw;
 }
@@ -114,15 +116,6 @@ img {
   text-align: center;
 }
 
-/* フッターの位置合わせ（ページごとに合わせる） */
-.pg_top .ly_footer {
-  top: 4143px;
-}
-
-.pg_contact .ly_footer {
-  top: 1262px;
-}
-
 /*----------------------
   モジュール
 ------------------------*/
@@ -131,7 +124,7 @@ img {
   margin: 0;
   /* フォント指定 */
   color: #ffffff;
-  font-size: 1.625em;
+  font-size: 1.625rem;
   font-weight: bold;
   font-style: italic;
   letter-spacing: 0.05em;
@@ -162,6 +155,10 @@ img {
   letter-spacing: 0.05em;
   line-height: 1.375;
   text-decoration: none;
+}
+.bl_headerNav .bl_headerNav_link::after {
+  content: "";
+  margin-left: -0.05em;
 }
 
 /*--- メインビジュアル ---*/
@@ -199,10 +196,8 @@ img {
   color: #ffffff;
   font-size: 4.375rem;
   font-weight: bold;
-  /* ★カンプの値に合わせるなら、0.714286 */
-  line-height: 0.714286;
+  line-height: normal;
   letter-spacing: 0.05em;
-  /*1.357142*/
 }
 
 .bl_jumbotron_subcopy {
@@ -212,10 +207,8 @@ img {
   color: #ffffff;
   font-size: 2.5rem;
   font-weight: bold;
-  /* ★カンプに合わせるなら、1.25 */
-  line-height: 1.25;
+  line-height: normal;
   letter-spacing: 0.05em;
-  /*1.425*/
 }
 
 /*--- タイトル（h2） ---*/
@@ -226,11 +219,14 @@ img {
   font-style: italic;
   font-size: 3.75rem;
   letter-spacing: 0.05em;
-  /* ★カンプの値に合わせるなら、0.4 */
-  line-height: 1.36;
+  line-height: normal;
   /* Works用タイトル */
   /* Service用タイトル */
   /* Contact用タイトル */
+}
+.el_h2Heading::after {
+  content: "";
+  margin-left: -0.05em;
 }
 .el_h2Heading > span {
   position: relative;
@@ -312,11 +308,14 @@ img {
   opacity: 5%;
   /* フォント指定 */
   color: #171717;
-  font-size: 5.625em;
   font-weight: bold;
+  font-size: 5.625rem;
   letter-spacing: 0.05em;
-  /* カンプに合わせるなら1.666666 */
-  line-height: 1.355555;
+  line-height: normal;
+}
+.el_opacityTxt::after {
+  content: "";
+  margin-left: -0.05em;
 }
 
 .el_opacityTxt__white {
@@ -341,23 +340,38 @@ img {
   box-shadow: 0 0 6px #000000;
   background-color: #ffffff;
 }
-.bl_card .bl_card_imgWrapper {
+
+.bl_card_imgWrapper {
   margin: 0;
 }
-.bl_card .bl_card_imgWrapper > img {
+.bl_card_imgWrapper > img {
   width: 100%;
 }
-.bl_card .bl_card_body .bl_card_txt {
-  margin: 25px 20px;
+
+.bl_card_txt {
+  margin: 25px 20px 26px 20px;
   letter-spacing: 0.05em;
+  /*
+          @include m.lineHeightAdjustment(1.875);*/
   line-height: 1.875;
+  color: red;
+}
+.bl_card_txt::before {
+  content: "";
+  display: block;
+  margin-top: -4px;
+}
+.bl_card_txt::after {
+  content: "";
+  display: block;
+  margin-bottom: -4px;
 }
 
 .bl_cardUnit__col3 > .bl_card {
   width: 32%;
   margin-right: 2%;
-  margin-bottom: 25px;
   /* 相殺対象（★） */
+  margin-bottom: 25px;
 }
 .bl_cardUnit__col3 > .bl_card:nth-of-type(3n) {
   margin-right: 0;
@@ -383,13 +397,17 @@ img {
   text-align: center;
   /* フォント指定 */
   color: #171717;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0.05em;
   line-height: 1.875;
   box-shadow: 0 0 6px #1b1310;
   border-radius: 29.5px;
   border: none;
+}
+.el_roundedBtn::after {
+  content: "";
+  margin-left: -0.05em;
 }
 
 /*--- 画像付きリンク ---*/
@@ -424,7 +442,7 @@ img {
   text-align: center;
   /* フォント指定 */
   color: #ffffff;
-  font-size: 2.5em;
+  font-size: 2.5rem;
   font-weight: bold;
   font-style: italic;
   letter-spacing: 0.05em;
@@ -441,7 +459,7 @@ img {
   text-align: center;
   /* フォント指定 */
   color: #ffffff;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   line-height: 1.45;
   letter-spacing: 0.05em;
 }
@@ -450,11 +468,10 @@ img {
 .el_copyRight {
   margin: 0;
   /* フォント指定 */
-  font-size: 0.875em;
+  font-size: 0.875rem;
   font-weight: bold;
+  line-height: normal;
   letter-spacing: 0.05em;
-  /* カンプに合わせるなら2.142857 */
-  line-height: 1.357143;
 }
 
 /*--- Contactページ ---*/
@@ -482,11 +499,10 @@ img {
   margin: 0;
   transform: translate(-50%, -50%);
   /* フォント指定 */
-  font-size: 3.75em;
+  font-size: 3.75rem;
   font-style: italic;
   font-weight: bold;
-  line-height: 1.7;
-  /* ★カンプに合わせるなら、0.8 */
+  line-height: normal;
   letter-spacing: 0.1em;
   color: #ffffff;
 }
@@ -508,9 +524,7 @@ img {
   width: 100%;
   border: 1px solid #141414;
   /* 元のデザインを消去 */
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 .bl_contactForm_item input[type=text],
 .bl_contactForm_item input[type=tel],
@@ -527,11 +541,9 @@ img {
   display: block;
   margin: 0 0 4px 0;
   /* フォント指定 */
-  font-family: "Noto Serif", sans-serif;
-  font-size: 1em;
+  font-size: 1rem;
+  line-height: normal;
   letter-spacing: 0.05em;
-  /* カンプに合わせるなら1.875 */
-  line-height: 1.4375;
 }
 
 /* チェックボックスを横並びにする */
@@ -550,9 +562,7 @@ img {
   width: 10px;
   margin: 0 10px 0 0;
   /* 元のデザインを消去 */
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   /* ボックスデザインを定義 */
   /* チェックマークデザインを定義 */
 }
@@ -572,7 +582,7 @@ img {
   content: "\f00c";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: 0.5em;
+  font-size: 0.5rem;
   opacity: 0;
 }
 .bl_checkbox input[type=checkbox]:checked::after {
@@ -637,4 +647,5 @@ img {
     ファイル名：_responsive.scss
     機能：レスポンシブのスタイルを記述する
 --------------------------------------------------*/
+
 /*# sourceMappingURL=style.css.map */

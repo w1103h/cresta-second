@@ -10,7 +10,7 @@
 ------------------------*/
 /*--- ヘッダー ---*/
 .ly_header {
-    position: relative;
+    position: absolute;
     z-index: 99;
     width: 100vw;
     padding: 19px 0;
@@ -38,11 +38,6 @@
 }
 
 /*--- コンテンツ ---*/
-.ly_main {
-    position: absolute;
-    top: 0;
-}
-
 .ly_section {
     width: 100vw;
 }
@@ -81,19 +76,6 @@
     text-align: center;
 }
 
-/* フッターの位置合わせ（ページごとに合わせる） */
-.pg_top {
-    .ly_footer {
-        top: 4143px;
-    }
-}
-
-.pg_contact {
-    .ly_footer {
-        top: 1262px;
-    }
-}
-
 /*----------------------
   モジュール
 ------------------------*/
@@ -104,7 +86,7 @@
     /* フォント指定 */
 
     color: #ffffff;
-    font-size: 1.625em;
+    font-size: 1.625rem;
     font-weight: bold;
     font-style: italic;
     letter-spacing: .05em;
@@ -138,7 +120,7 @@
         color: #ffffff;
         font-weight: bold;
         font-style: italic;
-        letter-spacing: .05em;
+        @include m.letterSpacingAdjustment(.05em);
         line-height: 1.375;
         text-decoration: none;
     }
@@ -180,17 +162,11 @@
     margin: 0;
 
     /* フォント指定 */
-
     color: #ffffff;
     font-size: 4.375rem;
     font-weight: bold;
-
-    /* ★カンプの値に合わせるなら、0.714286 */
-    line-height: .714286;
+    line-height: normal;
     letter-spacing: .05em;
-
-    /*1.357142*/
-    ;
 }
 
 .bl_jumbotron_subcopy {
@@ -198,17 +174,11 @@
     margin: 0;
 
     /* フォント指定 */
-
     color: #ffffff;
     font-size: 2.5rem;
     font-weight: bold;
-
-    /* ★カンプに合わせるなら、1.25 */
-    line-height: 1.25;
+    line-height: normal;
     letter-spacing: .05em;
-
-    /*1.425*/
-    ;
 }
 
 /*--- タイトル（h2） ---*/
@@ -220,10 +190,8 @@
     font-weight: bold;
     font-style: italic;
     font-size: 3.75rem;
-    letter-spacing: .05em;
-
-    /* ★カンプの値に合わせるなら、0.4 */
-    line-height: 1.36;
+    @include m.letterSpacingAdjustment(.05em);
+    line-height: normal;
 
     &>span {
         position: relative;
@@ -327,12 +295,10 @@
 
     /* フォント指定 */
     color: #171717;
-    font-size: 5.625em;
     font-weight: bold;
-    letter-spacing: .05em;
-
-    /* カンプに合わせるなら1.666666 */
-    line-height: 1.355555;
+    font-size: 5.625rem;
+    @include m.letterSpacingAdjustment(.05em);
+    line-height: normal;
 }
 
 .el_opacityTxt__white {
@@ -358,22 +324,36 @@
 .bl_card {
     box-shadow: 0 0 6px #000000;
     background-color: #ffffff;
+}
 
-    .bl_card_imgWrapper {
-        margin: 0;
+.bl_card_imgWrapper {
+    margin: 0;
 
-        &>img {
-            width: 100%;
-        }
+    &>img {
+        width: 100%;
+    }
+}
+
+.bl_card_txt {
+    margin: 25px 20px 26px 20px;
+
+    letter-spacing: .05em;
+    /*
+            @include m.lineHeightAdjustment(1.875);*/
+    line-height: 1.875;
+
+    color: red;
+
+    &::before {
+        content: '';
+        display: block;
+        margin-top: -4px;
     }
 
-    .bl_card_body {
-        .bl_card_txt {
-            margin: 25px 20px;
-
-            letter-spacing: .05em;
-            line-height: 1.875;
-        }
+    &::after {
+        content: '';
+        display: block;
+        margin-bottom: -4px;
     }
 }
 
@@ -381,8 +361,9 @@
     &>.bl_card {
         width: 32%;
         margin-right: 2%;
-        margin-bottom: 25px;
+
         /* 相殺対象（★） */
+        margin-bottom: 25px;
     }
 
     &>.bl_card:nth-of-type(3n) {
@@ -414,9 +395,9 @@
 
     /* フォント指定 */
     color: #171717;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: bold;
-    letter-spacing: .05em;
+    @include m.letterSpacingAdjustment(.05em);
     line-height: 1.875;
     box-shadow: 0 0 6px #1b1310;
     border-radius: 29.5px;
@@ -457,13 +438,13 @@
         width: 100%;
         padding-top: 135px;
 
-        
+
         text-decoration: none;
         text-align: center;
 
         /* フォント指定 */
         color: #ffffff;
-        font-size: 2.5em;
+        font-size: 2.5rem;
         font-weight: bold;
         font-style: italic;
         letter-spacing: .05em;
@@ -483,7 +464,7 @@
     text-align: center;
     /* フォント指定 */
     color: #ffffff;
-    font-size: 1.25em;
+    font-size: 1.25rem;
     line-height: 1.45;
     letter-spacing: .05em;
 }
@@ -493,12 +474,10 @@
     margin: 0;
 
     /* フォント指定 */
-    font-size: .875em;
+    font-size: .875rem;
     font-weight: bold;
+    line-height: normal;
     letter-spacing: .05em;
-
-    /* カンプに合わせるなら2.142857 */
-    line-height: 1.357143;
 }
 
 /*--- Contactページ ---*/
@@ -530,12 +509,10 @@
     transform: translate(-50%, -50%);
 
     /* フォント指定 */
-    font-size: 3.75em;
+    font-size: 3.75rem;
     font-style: italic;
     font-weight: bold;
-    line-height: 1.7;
-
-    /* ★カンプに合わせるなら、0.8 */
+    line-height: normal;
     letter-spacing: .1em;
     color: #ffffff;
 }
@@ -581,12 +558,10 @@
     margin: 0 0 4px 0;
 
     /* フォント指定 */
-    font-family: "Noto Serif", sans-serif;
-    font-size: 1em;
+    font-size: 1rem;
+    line-height: normal;
     letter-spacing: .05em;
 
-    /* カンプに合わせるなら1.875 */
-    line-height: 1.4375;
 }
 
 /* チェックボックスを横並びにする */
@@ -632,7 +607,7 @@
             content: "\f00c";
             font-family: "Font Awesome 5 Free";
             font-weight: 900;
-            font-size: .5em;
+            font-size: .5rem;
             opacity: 0;
         }
 
