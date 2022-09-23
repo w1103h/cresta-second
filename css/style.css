@@ -213,28 +213,28 @@ img {
 
 /*--- タイトル（h2） ---*/
 .el_h2Heading {
-  margin: 0;
-  /* フォント指定 */
-  font-weight: bold;
-  font-style: italic;
-  font-size: 3.75rem;
-  letter-spacing: 0.05em;
-  line-height: normal;
+  display: inline-block;
+  position: relative;
+  margin-left: 100px;
   /* Works用タイトル */
   /* Service用タイトル */
   /* Contact用タイトル */
 }
-.el_h2Heading::after {
+.el_h2Heading > h2 {
+  display: inline-block;
+  margin: 0 233px 0 0;
+  /* フォント指定 */
+  font-size: 3.75rem;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  line-height: normal;
+}
+.el_h2Heading > h2::after {
   content: "";
   margin-left: -0.05em;
 }
-.el_h2Heading > span {
-  position: relative;
-  display: inline-block;
-  padding-right: 233px;
-  margin-left: 100px;
-}
-.el_h2Heading > span::after {
+.el_h2Heading::after {
   position: absolute;
   top: 50%;
   right: 0;
@@ -245,65 +245,73 @@ img {
   background-color: #000000;
 }
 .el_h2Heading.el_h2Heading__works {
+  display: flex;
+  justify-content: flex-end;
+}
+.el_h2Heading.el_h2Heading__works > h2 {
   color: #ffffff;
   letter-spacing: 0.1em;
+  margin: 0 248px 0 0;
+}
+.el_h2Heading.el_h2Heading__works > h2::after {
+  content: "";
+  margin-left: -0.1em;
 }
 .el_h2Heading.el_h2Heading__works::after {
-  content: "";
-  margin-left: -0.1em;
-}
-.el_h2Heading.el_h2Heading__works > span {
-  padding-right: 248px;
-}
-.el_h2Heading.el_h2Heading__works > span::after {
   background-color: #ffffff;
 }
-.el_h2Heading.el_h2Heading__service {
+.el_h2Heading.el_h2Heading__service > h2 {
   letter-spacing: 0.1em;
+  letter-spacing: 0.1em;
+  margin: 0 229px 0 0;
 }
-.el_h2Heading.el_h2Heading__service::after {
+.el_h2Heading.el_h2Heading__service > h2::after {
   content: "";
   margin-left: -0.1em;
-}
-.el_h2Heading.el_h2Heading__service > span {
-  padding-right: 229px;
 }
 .el_h2Heading.el_h2Heading__contact {
-  padding-top: 9px;
+  display: flex;
+  justify-content: flex-end;
+}
+.el_h2Heading.el_h2Heading__contact > h2 {
   color: #ffffff;
   letter-spacing: 0.1em;
+  margin: 0 231px 0 0;
 }
-.el_h2Heading.el_h2Heading__contact::after {
+.el_h2Heading.el_h2Heading__contact > h2::after {
   content: "";
   margin-left: -0.1em;
 }
-.el_h2Heading.el_h2Heading__contact > span {
-  padding-right: 231px;
-}
-.el_h2Heading.el_h2Heading__contact > span::after {
+.el_h2Heading.el_h2Heading__contact::after {
   background-color: #ffffff;
 }
 
 /*--- メッセージ（主張） ---*/
 .el_msg {
-  margin: 0;
   text-align: center;
   /* フォント指定 */
   font-weight: bold;
   font-size: 1.875rem;
   letter-spacing: 0.05em;
   line-height: 1.666666;
-  color: red;
+  margin: 0;
+  /* フォント調整 */
+}
+.el_msg::before, .el_msg::after {
+  content: "";
+  display: block;
 }
 .el_msg::before {
-  content: "";
-  display: block;
-  margin-top: -1px;
+  margin-top: calc(1 - (1.666666) * 0.5em);
 }
 .el_msg::after {
-  content: "";
-  display: block;
-  margin-bottom: -3px;
+  margin-bottom: calc(1 - (1.666666) * 0.5em);
+}
+.el_msg::before {
+  margin-top: -2px;
+}
+.el_msg::after {
+  margin-bottom: -2px;
 }
 
 /*--- メディア ---*/
@@ -320,18 +328,17 @@ img {
   font-weight: bold;
   line-height: 1.875;
   letter-spacing: 0.05em;
-  color: red;
   margin: 0;
 }
-.bl_media .bl_media_txt::before {
+.bl_media .bl_media_txt::before, .bl_media .bl_media_txt::after {
   content: "";
   display: block;
-  margin-top: -5px;
+}
+.bl_media .bl_media_txt::before {
+  margin-top: calc(1 - (1.875) * 0.5em);
 }
 .bl_media .bl_media_txt::after {
-  content: "";
-  display: block;
-  margin-bottom: -2px;
+  margin-bottom: calc(1 - (1.875) * 0.5em);
 }
 .bl_media .bl_media_imgWrapper {
   width: 44%;
@@ -353,6 +360,13 @@ img {
   margin-left: -0.05em;
 }
 
+/* 右寄せ */
+.el_opacityTxt__right {
+  display: flex;
+  justify-content: right;
+}
+
+/* 白 */
 .el_opacityTxt__white {
   opacity: 10%;
   color: #ffffff;
@@ -386,20 +400,24 @@ img {
 .bl_card_txt {
   margin: 25px 20px 26px 20px;
   letter-spacing: 0.05em;
-  /*
-          @include m.lineHeightAdjustment(1.875);*/
   line-height: 1.875;
-  color: red;
+  /* フォント調整 */
+}
+.bl_card_txt::before, .bl_card_txt::after {
+  content: "";
+  display: block;
 }
 .bl_card_txt::before {
-  content: "";
-  display: block;
-  margin-top: -4px;
+  margin-top: calc(1 - (1.875) * 0.5em);
 }
 .bl_card_txt::after {
-  content: "";
-  display: block;
-  margin-bottom: -3px;
+  margin-bottom: calc(1 - (1.875) * 0.5em);
+}
+.bl_card_txt::before {
+  margin-top: -3.5px;
+}
+.bl_card_txt::after {
+  margin-bottom: -3.5px;
 }
 
 .bl_cardUnit__col3 > .bl_card {
@@ -423,22 +441,25 @@ img {
 
 /*--- ボタン ---*/
 .el_roundedBtn {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   height: 59px;
   width: 235px;
-  box-sizing: border-box;
-  text-decoration: none;
+  margin: 0 auto;
   background-color: #f7d43f;
-  text-align: center;
+  box-shadow: 0 0 6px #1b1310;
+  border-radius: 29.5px;
+  border: none;
+  text-decoration: none;
   /* フォント指定 */
   color: #171717;
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0.05em;
   line-height: 1.875;
-  box-shadow: 0 0 6px #1b1310;
-  border-radius: 29.5px;
-  border: none;
+  text-align: center;
 }
 .el_roundedBtn::after {
   content: "";
@@ -490,7 +511,7 @@ img {
 /*--- CTAエリア ---*/
 .bl_cta_txt {
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
   text-align: center;
   /* フォント指定 */
   color: #ffffff;

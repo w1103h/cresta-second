@@ -183,105 +183,101 @@
 
 /*--- タイトル（h2） ---*/
 .el_h2Heading {
-    margin: 0;
+    display: inline-block;
+    position: relative;
+    margin-left: 100px;
 
-    /* フォント指定 */
-    font-weight: bold;
-    font-style: italic;
-    font-size: 3.75rem;
-    @include m.letterSpacingAdjustment(.05em);
-    line-height: normal;
-
-    &>span {
-        position: relative;
+    &>h2 {
         display: inline-block;
-        padding-right: 233px;
-        margin-left: 100px;
+        margin: 0 233px 0 0;
 
-        &::after {
-            position: absolute;
-            top: 50%;
-            right: 0;
-            height: 5px;
-            width: 200px;
+        /* フォント指定 */
+        font-size: 3.75rem;
+        font-weight: bold;
+        font-style: italic;
+        @include m.letterSpacingAdjustment(.05em);
+        line-height: normal;
+    }
 
-            transform: translateY(-50%);
-            content: "";
-            background-color: #000000;
-        }
+    &::after {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: 5px;
+        width: 200px;
+
+        transform: translateY(-50%);
+        content: "";
+        background-color: #000000;
     }
 
     /* Works用タイトル */
     &.el_h2Heading__works {
-        color: #ffffff;
-        @include m.letterSpacingAdjustment(.1em);
+        display: flex;
+        justify-content: flex-end;
 
-        &>span {
-            padding-right: 248px;
+        &>h2 {
+            color: #ffffff;
+            @include m.letterSpacingAdjustment(.1em);
+            margin: 0 248px 0 0;
+        }
 
-            &::after {
-                background-color: #ffffff;
-            }
+        &::after {
+            background-color: #ffffff;
         }
     }
 
     /* Service用タイトル */
     &.el_h2Heading__service {
-        @include m.letterSpacingAdjustment(.1em);
 
-        &>span {
-            padding-right: 229px;
+        &>h2 {
+            @include m.letterSpacingAdjustment(.1em);
+            letter-spacing: .1em;
+            margin: 0 229px 0 0;
         }
     }
 
     /* Contact用タイトル */
     &.el_h2Heading__contact {
-        padding-top: 9px;
+        display: flex;
+        justify-content: flex-end;
 
-        color: #ffffff;
-        @include m.letterSpacingAdjustment(.1em);
+        &>h2 {
+            color: #ffffff;
+            @include m.letterSpacingAdjustment(.1em);
+            margin: 0 231px 0 0;
+        }
 
-        &>span {
-            padding-right: 231px;
-
-            &::after {
-                background-color: #ffffff;
-            }
+        &::after {
+            background-color: #ffffff;
         }
     }
 }
 
 /*--- メッセージ（主張） ---*/
 .el_msg {
-    margin: 0;
-
     text-align: center;
 
     /* フォント指定 */
     font-weight: bold;
     font-size: 1.875rem;
     letter-spacing: .05em;
-    line-height: 1.666666;
-    color: red;
+    @include m.lineHeightAdjustment(1.666666);
+    margin: 0;
 
-    &::before{
-        content:'';
-        display: block;
-        margin-top: -1px;
+    /* フォント調整 */
+    &::before {
+        margin-top: -2px;
     }
 
-    &::after{
-        content: '';
-        display: block;
-        margin-bottom: -3px;
+    &::after {
+        margin-bottom: -2px;
     }
-    
 }
 
 /*--- メディア ---*/
 .bl_media {
     display: flex;
-
     align-items: center;
 
     .bl_media_body {
@@ -292,22 +288,9 @@
     .bl_media_txt {
         /* フォント指定 */
         font-weight: bold;
-        line-height: 1.875;
+        @include m.lineHeightAdjustment(1.875);
         letter-spacing: .05em;
-        color: red;
         margin: 0;
-
-        &::before{
-            content:'';
-            display: block;
-            margin-top: -5px;
-        }
-    
-        &::after{
-            content: '';
-            display: block;
-            margin-bottom: -2px;
-        }
     }
 
     .bl_media_imgWrapper {
@@ -328,6 +311,13 @@
     line-height: normal;
 }
 
+/* 右寄せ */
+.el_opacityTxt__right{
+    display: flex;
+    justify-content: right;
+}
+
+/* 白 */
 .el_opacityTxt__white {
     opacity: 10%;
     color: #ffffff;
@@ -365,22 +355,15 @@
     margin: 25px 20px 26px 20px;
 
     letter-spacing: .05em;
-    /*
-            @include m.lineHeightAdjustment(1.875);*/
-    line-height: 1.875;
+    @include m.lineHeightAdjustment(1.875);
 
-    color: red;
-
+    /* フォント調整 */
     &::before {
-        content: '';
-        display: block;
-        margin-top: -4px;
+        margin-top: -3.5px;
     }
 
     &::after {
-        content: '';
-        display: block;
-        margin-bottom: -3px;
+        margin-bottom: -3.5px;
     }
 }
 
@@ -411,14 +394,18 @@
 
 /*--- ボタン ---*/
 .el_roundedBtn {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
     height: 59px;
     width: 235px;
-
-    box-sizing: border-box;
-    text-decoration: none;
+    margin: 0 auto;
     background-color: #f7d43f;
-    text-align: center;
+    box-shadow: 0 0 6px #1b1310;
+    border-radius: 29.5px;
+    border: none;
+    text-decoration: none;
 
     /* フォント指定 */
     color: #171717;
@@ -426,9 +413,7 @@
     font-weight: bold;
     @include m.letterSpacingAdjustment(.05em);
     line-height: 1.875;
-    box-shadow: 0 0 6px #1b1310;
-    border-radius: 29.5px;
-    border: none;
+    text-align: center;
 }
 
 /*--- 画像付きリンク ---*/
@@ -486,7 +471,7 @@
 /*--- CTAエリア ---*/
 .bl_cta_txt {
     margin-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 
     text-align: center;
     /* フォント指定 */
@@ -659,16 +644,6 @@
     width: 100%;
 
     background-color: rgba(23, 23, 23, 30%);
-}
-
-/*--- 右揃え ---*/
-.ta_right {
-    text-align: right !important;
-}
-
-/*--- 中央揃え ---*/
-.ta_center {
-    text-align: center;
 }
 
 /* パディング指定 */

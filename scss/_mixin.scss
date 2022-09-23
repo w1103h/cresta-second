@@ -9,7 +9,7 @@
 ----------*/
 @mixin lineHeightAdjustment($line-height) {
 
-    color: red;
+    line-height: $line-height;
 
     &::before,
     &::after {
