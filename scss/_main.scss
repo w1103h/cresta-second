@@ -186,7 +186,6 @@
     margin: 0;
 
     /* フォント指定 */
-
     font-weight: bold;
     font-style: italic;
     font-size: 3.75rem;
@@ -215,7 +214,7 @@
     /* Works用タイトル */
     &.el_h2Heading__works {
         color: #ffffff;
-        letter-spacing: .1em;
+        @include m.letterSpacingAdjustment(.1em);
 
         &>span {
             padding-right: 248px;
@@ -228,7 +227,7 @@
 
     /* Service用タイトル */
     &.el_h2Heading__service {
-        letter-spacing: .1em;
+        @include m.letterSpacingAdjustment(.1em);
 
         &>span {
             padding-right: 229px;
@@ -240,7 +239,7 @@
         padding-top: 9px;
 
         color: #ffffff;
-        letter-spacing: .1em;
+        @include m.letterSpacingAdjustment(.1em);
 
         &>span {
             padding-right: 231px;
@@ -263,6 +262,20 @@
     font-size: 1.875rem;
     letter-spacing: .05em;
     line-height: 1.666666;
+    color: red;
+
+    &::before{
+        content:'';
+        display: block;
+        margin-top: -1px;
+    }
+
+    &::after{
+        content: '';
+        display: block;
+        margin-bottom: -3px;
+    }
+    
 }
 
 /*--- メディア ---*/
@@ -281,6 +294,20 @@
         font-weight: bold;
         line-height: 1.875;
         letter-spacing: .05em;
+        color: red;
+        margin: 0;
+
+        &::before{
+            content:'';
+            display: block;
+            margin-top: -5px;
+        }
+    
+        &::after{
+            content: '';
+            display: block;
+            margin-bottom: -2px;
+        }
     }
 
     .bl_media_imgWrapper {
@@ -353,7 +380,7 @@
     &::after {
         content: '';
         display: block;
-        margin-bottom: -4px;
+        margin-bottom: -3px;
     }
 }
 

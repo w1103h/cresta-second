@@ -248,6 +248,10 @@ img {
   color: #ffffff;
   letter-spacing: 0.1em;
 }
+.el_h2Heading.el_h2Heading__works::after {
+  content: "";
+  margin-left: -0.1em;
+}
 .el_h2Heading.el_h2Heading__works > span {
   padding-right: 248px;
 }
@@ -257,6 +261,10 @@ img {
 .el_h2Heading.el_h2Heading__service {
   letter-spacing: 0.1em;
 }
+.el_h2Heading.el_h2Heading__service::after {
+  content: "";
+  margin-left: -0.1em;
+}
 .el_h2Heading.el_h2Heading__service > span {
   padding-right: 229px;
 }
@@ -264,6 +272,10 @@ img {
   padding-top: 9px;
   color: #ffffff;
   letter-spacing: 0.1em;
+}
+.el_h2Heading.el_h2Heading__contact::after {
+  content: "";
+  margin-left: -0.1em;
 }
 .el_h2Heading.el_h2Heading__contact > span {
   padding-right: 231px;
@@ -281,6 +293,17 @@ img {
   font-size: 1.875rem;
   letter-spacing: 0.05em;
   line-height: 1.666666;
+  color: red;
+}
+.el_msg::before {
+  content: "";
+  display: block;
+  margin-top: -1px;
+}
+.el_msg::after {
+  content: "";
+  display: block;
+  margin-bottom: -3px;
 }
 
 /*--- メディア ---*/
@@ -297,6 +320,18 @@ img {
   font-weight: bold;
   line-height: 1.875;
   letter-spacing: 0.05em;
+  color: red;
+  margin: 0;
+}
+.bl_media .bl_media_txt::before {
+  content: "";
+  display: block;
+  margin-top: -5px;
+}
+.bl_media .bl_media_txt::after {
+  content: "";
+  display: block;
+  margin-bottom: -2px;
 }
 .bl_media .bl_media_imgWrapper {
   width: 44%;
@@ -364,7 +399,7 @@ img {
 .bl_card_txt::after {
   content: "";
   display: block;
-  margin-bottom: -4px;
+  margin-bottom: -3px;
 }
 
 .bl_cardUnit__col3 > .bl_card {
@@ -524,7 +559,9 @@ img {
   width: 100%;
   border: 1px solid #141414;
   /* 元のデザインを消去 */
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .bl_contactForm_item input[type=text],
 .bl_contactForm_item input[type=tel],
@@ -562,7 +599,9 @@ img {
   width: 10px;
   margin: 0 10px 0 0;
   /* 元のデザインを消去 */
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   /* ボックスデザインを定義 */
   /* チェックマークデザインを定義 */
 }
@@ -647,5 +686,4 @@ img {
     ファイル名：_responsive.scss
     機能：レスポンシブのスタイルを記述する
 --------------------------------------------------*/
-
 /*# sourceMappingURL=style.css.map */
