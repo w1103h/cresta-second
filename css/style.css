@@ -597,7 +597,6 @@ img {
 .bl_contactForm_item textarea {
   width: 100%;
   border: 1px solid #141414;
-  border-color: red;
   /* 元のデザインを消去 */
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -617,7 +616,6 @@ img {
 .bl_contactForm_ttl {
   display: block;
   margin: 0 0 4px 0;
-  color: red;
   /* フォント指定 */
   line-height: normal;
   letter-spacing: 0.05em;
