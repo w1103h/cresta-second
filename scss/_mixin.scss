@@ -3,25 +3,37 @@
     機能：mixinを記述する
 --------------------------------------------------*/
 
-/*--- line-heightを調節する（XDとwebで仕様が異なるため） ---*/
+/*----------
+    line-heightを調節する（XDとwebで仕様が異なるため） 
+    $line-height: line-heightの指定値
+----------*/
 @mixin lineHeightAdjustment($line-height) {
 
-    color: red;
+    line-height: $line-height;
+    
+    &::before {
+        content: "";
+        display: block;
+        margin-top: calc(1 - (#{$line-height}) * 0.5em);
+    }
 
-    &::before,
     &::after {
         content: "";
         display: block;
-        width: 0;
-        height: 0;
+        margin-bottom: calc(1 - (#{$line-height}) * 0.5em);
+
     }
+}
 
-    &::before {
-        margin-top: calc((#{$line-height} - 1) * -0.5em);
-    }
+/*----------
+    letter-spacingを調節する（XDとwebで仕様が異なるため） 
+    $letter-spacing: letter-spacingの指定値
+----------*/
+@mixin letterSpacingAdjustment($letter-spacing) {
+    letter-spacing: $letter-spacing;
 
-    &::after {
-        margin-bottom: calc((#{$line-height} - 1) * 0.5em);
-
+    &::after{
+        content: '';
+        margin-left: -$letter-spacing;
     }
 }

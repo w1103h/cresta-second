@@ -17,22 +17,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Noto+Serif:ital,wght@0,400;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,700&display=swap"
     rel="stylesheet">
 
   <!-- CSS読み込み -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
-  <link rel="stylesheet" href="scss/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="pg_top">
   <header class="ly_header">
     <div class="ly_header_inner">
-      <h1 class="el_sitettl"><a href="index.html">Cresta Design</a></h1>
-      <nav class="bl_headerNav">
-        <ul class="bl_headerNav_inner">
+      <a class="el_sitettl" href="index.html">Cresta Design</a>
+      <nav>
+        <ul class="bl_headerNav">
           <li><a class="bl_headerNav_link" href="#id_concept">Concept</a></li>
           <li><a class="bl_headerNav_link" href="#id_service">Service</a></li>
           <li><a class="bl_headerNav_link" href="#id_works">Works</a></li>
@@ -40,20 +40,21 @@
         </ul>
       </nav>
     </div>
+    <!-- /.ly_header_inner -->
   </header>
 
-  <main class="ly_main">
+  <main>
     <!-- メインビジュアル -->
     <div class="bl_jumbotron">
       <ul class="bl_jumbotron_slide">
         <li class="bl_jumbotron_slideItem">
-          <img src="img/fv-bgi_01@2x.jpg" alt="メインビジュアル１">
+          <img src="img/fv-bgi_01@2x.jpg" alt="">
         </li>
         <li class="bl_jumbotron_slideItem">
-          <img src="img/fv-bgi_02@2x.jpg" alt="メインビジュアル２">
+          <img src="img/fv-bgi_02@2x.jpg" alt="">
         </li>
         <li class="bl_jumbotron_slideItem">
-          <img src="img/fv-bgi_03@2x.jpg" alt="メインビジュアル３">
+          <img src="img/fv-bgi_03@2x.jpg" alt="">
         </li>
       </ul>
       <div class="bl_jumbotron_inner">
@@ -70,9 +71,9 @@
     <!-- Concept -->
     <section class="ly_section" id="id_concept">
       <div class="ly_cont">
-        <h2 class="el_h2Heading">
-          <span>CONCEPT</span>
-        </h2>
+        <span class="el_h2Heading">
+          <h2>CONCEPT</h2>
+        </span>
         <div class="ly_cont_inner ly_cont_inner__pt70">
           <p class="el_msg hp_pb60">“働きたくなる空間”をデザインすることで<br>
             人々を幸せにする。</p>
@@ -84,17 +85,13 @@
             </div>
             <!-- /.bl_media_body -->
             <figure class="bl_media_imgWrapper">
-              <img src="img/concept-image@2x.jpg" alt="私たちは、オフィスに特化した空間デザイン専門としております。その理由は、「働きたくなる空間で仕事ができれば多くの人を幸せにできるのではないか」と考えるためです。そんな想いの株式会社Cresta
-            Designだからこそできる空間デザインを提供させていただきます。">
+              <img src="img/concept-image@2x.jpg" alt="">
             </figure>
           </div>
           <!-- /.bl_media -->
         </div>
         <!-- /.ly_cont_inner -->
-        <div class="ta_right">
-          <span class="el_opacityTxt">Our Concept</span>
-        </div>
-        <!-- /.ta_right -->
+        <span class="el_opacityTxt el_opacityTxt__right">Our Concept</span>
       </div>
       <!-- /.ly_cont -->
     </section>
@@ -102,17 +99,14 @@
     <!-- Works -->
     <section class="ly_section el_bgimg el_bgimg__works" id="id_works">
       <div class="ly_cont ly_cont__pt104">
-        <div class="ta_right">
-          <h2 class="el_h2Heading el_h2Heading__works">
-            <span>Works</span>
-          </h2>
-        </div>
-        <!-- /.ta_right-->
+        <span class="el_h2Heading el_h2Heading__works">
+          <h2>Works</h2>
+        </span>
         <div class="ly_cont_inner">
           <div class="bl_cardUnit bl_cardUnit__col3 hp_pb80">
             <div class="bl_card">
               <figure class="bl_card_imgWrapper">
-                <img src="img/card-img01@2x.jpg" alt="新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。">
+                <img src="img/card-img01@2x.jpg" alt="">
               </figure>
               <div class="bl_card_body">
                 <p class="bl_card_txt">
@@ -124,7 +118,7 @@
             <!-- bl_card -->
             <div class="bl_card">
               <figure class="bl_card_imgWrapper">
-                <img src="img/card-img02@2x.jpg" alt="新規サイトを公開しました。今回のサイトは白と黒を基調にした">
+                <img src="img/card-img02@2x.jpg" alt="">
               </figure>
               <div class="bl_card_body">
                 <p class="bl_card_txt">
@@ -136,7 +130,7 @@
             <!-- bl_card -->
             <div class="bl_card">
               <figure class="bl_card_imgWrapper">
-                <img src="img/card-img03@2x.jpg" alt="新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。">
+                <img src="img/card-img03@2x.jpg" alt="">
               </figure>
               <div class="bl_card_body">
                 <p class="bl_card_txt">
@@ -148,10 +142,7 @@
             <!-- /.bl_card -->
           </div>
           <!-- /.bl_cardUnit bl_cardUnit__col3 -->
-          <div class="ta_center">
-            <button class="el_roundedBtn" type="button">View more</button>
-          </div>
-          <!-- ta_center -->
+          <button class="el_roundedBtn" type="button">View more</button>
         </div>
         <!-- /.ly_cont_inner -->
         <span class="el_opacityTxt el_opacityTxt__white">Our Works</span>
@@ -162,9 +153,9 @@
     <!-- Service -->
     <section class="ly_section" id="id_service">
       <div class="ly_cont">
-        <h2 class="el_h2Heading el_h2Heading__service">
-          <span>Service</span>
-        </h2>
+        <span class="el_h2Heading el_h2Heading__service">
+          <h2>Service</h2>
+        </span>
         <div class="ly_cont_full">
           <ul class="bl_imgLinks">
             <li class="bl_imgLinks_img bl_imgLinks_img__hearing"><span class="bg_gray30"><a class="bl_imgLinks_link"
@@ -176,10 +167,7 @@
           </ul>
         </div>
         <!-- /.ly_cont_full -->
-        <div class="ta_right">
-          <span class="el_opacityTxt">Our Service</span>
-        </div>
-        <!-- /.ta_right-->
+        <span class="el_opacityTxt el_opacityTxt__right">Our Service</span>
       </div>
       <!-- /.ly_cont -->
     </section>
@@ -187,26 +175,20 @@
     <!-- Contact -->
     <section class="ly_section el_bgimg el_bgimg__contact" id="id_contact">
       <div class="ly_cont">
-        <div class="ta_right">
-          <h2 class="el_h2Heading el_h2Heading__contact">
-            <span>Contact</span>
-          </h2>
-        </div>
-        <!-- /.ta_right -->
+        <span class="el_h2Heading el_h2Heading__contact">
+          <h2>Contact</h2>
+        </span>
         <div class="ly_cont_inner">
           <div class="bl_cta">
             <p class="bl_cta_txt">お気軽にご相談ください。</p>
-            <div class="ta_center">
-              <a class="el_roundedBtn" href="contact/index.html">
-                <p>Contact</p>
-              </a>
-            </div>
+            <a class="el_roundedBtn" href="contact/index.html">Contact</a>
           </div>
+          <!-- /.bl_cta -->
         </div>
         <!-- /.ly_cont_inner -->
         <span class="el_opacityTxt el_opacityTxt__white">Contact us</span>
-
-        <!-- /.ly_cont -->
+      </div>
+      <!-- /.ly_cont -->
     </section>
   </main>
 
