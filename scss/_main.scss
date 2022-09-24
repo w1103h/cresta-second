@@ -43,7 +43,14 @@
 }
 
 .ly_cont {
+    width: 100vw;
     padding: 100px 120px 70px 120px;
+}
+
+.pg_contact{
+    .ly_cont{
+        padding: 97px 0 80px 0;
+    }
 }
 
 .ly_cont__pt104 {
@@ -309,10 +316,13 @@
     font-size: 5.625rem;
     @include m.letterSpacingAdjustment(.05em);
     line-height: normal;
+
+    /* 改行しない */
+    white-space: nowrap;
 }
 
 /* 右寄せ */
-.el_opacityTxt__right{
+.el_opacityTxt__right {
     display: flex;
     justify-content: right;
 }
@@ -489,7 +499,7 @@
     font-size: .875rem;
     font-weight: bold;
     line-height: normal;
-    letter-spacing: .05em;
+    @include m.letterSpacingAdjustment(.05em);
 }
 
 /*--- Contactページ ---*/
@@ -525,16 +535,19 @@
     font-style: italic;
     font-weight: bold;
     line-height: normal;
-    letter-spacing: .1em;
+    @include m.letterSpacingAdjustment(.1em);
     color: #ffffff;
 }
 
 /*--- お問い合わせフォーム ---*/
 .bl_contactForm {
-    padding: 97px 30px 80px 30px;
-    margin: 0 auto;
-
     max-width: 760px;
+
+    /* 余白設定 */
+    /* 画面幅が700px以下になったとき、
+        ギチギチにならないように左右に30pxずつ余白を設ける */
+    padding: 0 30px;    
+    margin: 0 auto;
 }
 
 .bl_contactForm_item {
@@ -546,7 +559,9 @@
     textarea {
         width: 100%;
 
+
         border: 1px solid #141414;
+        border-color: red;
 
         /* 元のデザインを消去 */
         appearance: none;
@@ -568,11 +583,11 @@
 .bl_contactForm_ttl {
     display: block;
     margin: 0 0 4px 0;
+    color: red;
 
     /* フォント指定 */
-    font-size: 1rem;
     line-height: normal;
-    letter-spacing: .05em;
+    @include m.letterSpacingAdjustment(.05em);
 
 }
 
@@ -584,7 +599,6 @@
 /* チェックボックス */
 .bl_checkbox {
     display: inline-flex;
-
     align-items: center;
 
     input[type="checkbox"] {
@@ -594,7 +608,6 @@
         margin: 0 10px 0 0;
 
         /* 元のデザインを消去 */
-
         appearance: none;
 
         /* ボックスデザインを定義 */
@@ -629,11 +642,11 @@
     }
 
     label {
-        display: inline-block;
         margin-right: 20px;
 
+        /* フォント設定 */
         letter-spacing: .05em;
-        line-height: 1.4375;
+        line-height: normal;        
     }
 }
 

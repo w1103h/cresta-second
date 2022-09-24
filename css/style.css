@@ -84,7 +84,12 @@ img {
 }
 
 .ly_cont {
+  width: 100vw;
   padding: 100px 120px 70px 120px;
+}
+
+.pg_contact .ly_cont {
+  padding: 97px 0 80px 0;
 }
 
 .ly_cont__pt104 {
@@ -354,6 +359,8 @@ img {
   font-size: 5.625rem;
   letter-spacing: 0.05em;
   line-height: normal;
+  /* 改行しない */
+  white-space: nowrap;
 }
 .el_opacityTxt::after {
   content: "";
@@ -529,6 +536,10 @@ img {
   line-height: normal;
   letter-spacing: 0.05em;
 }
+.el_copyRight::after {
+  content: "";
+  margin-left: -0.05em;
+}
 
 /*--- Contactページ ---*/
 /*--- メインビジュアル ---*/
@@ -562,12 +573,19 @@ img {
   letter-spacing: 0.1em;
   color: #ffffff;
 }
+.el_pageTitle::after {
+  content: "";
+  margin-left: -0.1em;
+}
 
 /*--- お問い合わせフォーム ---*/
 .bl_contactForm {
-  padding: 97px 30px 80px 30px;
-  margin: 0 auto;
   max-width: 760px;
+  /* 余白設定 */
+  /* 画面幅が700px以下になったとき、
+      ギチギチにならないように左右に30pxずつ余白を設ける */
+  padding: 0 30px;
+  margin: 0 auto;
 }
 
 .bl_contactForm_item {
@@ -579,6 +597,7 @@ img {
 .bl_contactForm_item textarea {
   width: 100%;
   border: 1px solid #141414;
+  border-color: red;
   /* 元のデザインを消去 */
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -598,10 +617,14 @@ img {
 .bl_contactForm_ttl {
   display: block;
   margin: 0 0 4px 0;
+  color: red;
   /* フォント指定 */
-  font-size: 1rem;
   line-height: normal;
   letter-spacing: 0.05em;
+}
+.bl_contactForm_ttl::after {
+  content: "";
+  margin-left: -0.05em;
 }
 
 /* チェックボックスを横並びにする */
@@ -649,10 +672,10 @@ img {
   opacity: 1;
 }
 .bl_checkbox label {
-  display: inline-block;
   margin-right: 20px;
+  /* フォント設定 */
   letter-spacing: 0.05em;
-  line-height: 1.4375;
+  line-height: normal;
 }
 
 /*--- 色指定 ---*/
@@ -661,16 +684,6 @@ img {
   height: 100%;
   width: 100%;
   background-color: rgba(23, 23, 23, 0.3);
-}
-
-/*--- 右揃え ---*/
-.ta_right {
-  text-align: right !important;
-}
-
-/*--- 中央揃え ---*/
-.ta_center {
-  text-align: center;
 }
 
 /* パディング指定 */
