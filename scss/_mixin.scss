@@ -10,18 +10,16 @@
 @mixin lineHeightAdjustment($line-height) {
 
     line-height: $line-height;
-
-    &::before,
-    &::after {
+    
+    &::before {
         content: "";
         display: block;
-    }
-
-    &::before {
         margin-top: calc(1 - (#{$line-height}) * 0.5em);
     }
 
     &::after {
+        content: "";
+        display: block;
         margin-bottom: calc(1 - (#{$line-height}) * 0.5em);
 
     }

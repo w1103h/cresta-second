@@ -47,8 +47,8 @@
     padding: 100px 120px 70px 120px;
 }
 
-.pg_contact{
-    .ly_cont{
+.pg_contact {
+    .ly_cont {
         padding: 97px 0 80px 0;
     }
 }
@@ -88,64 +88,55 @@
 ------------------------*/
 /*--- サイトタイトル ---*/
 .el_sitettl {
-    margin: 0;
-
-    /* フォント指定 */
-
+    /* 文字設定 */
     color: #ffffff;
+    text-decoration: none;
     font-size: 1.625rem;
     font-weight: bold;
     font-style: italic;
-    letter-spacing: .05em;
-    line-height: 1.384615;
+    @include m.letterSpacingAdjustment(.05em);
+    white-space: nowrap;
 
-    & a {
-        text-decoration: none;
-        color: currentColor;
-    }
+    /* 余白設定 */
+    margin: 0;
 }
 
 /*--- ヘッダーナビゲーション ---*/
 .bl_headerNav {
-    .bl_headerNav_inner {
-        display: flex;
-        margin: 0;
+    display: flex;
+    margin: 0;
 
-        list-style: none;
+    list-style: none;
 
-        &>*:last-child {
-            margin-right: 0;
-        }
-
-        &>li {
-            margin-right: 30px;
-        }
+    &>*:last-child {
+        margin-right: 0;
     }
 
-    .bl_headerNav_link {
-        /* フォント指定 */
-        color: #ffffff;
-        font-weight: bold;
-        font-style: italic;
-        @include m.letterSpacingAdjustment(.05em);
-        line-height: 1.375;
-        text-decoration: none;
+    &>li {
+        margin-right: 30px;
     }
+}
+
+.bl_headerNav_link {
+    /* 文字設定 */
+    color: #ffffff;
+    font-weight: bold;
+    font-style: italic;
+    @include m.letterSpacingAdjustment(.05em);
+    text-decoration: none;
 }
 
 /*--- メインビジュアル ---*/
 .bl_jumbotron {
-    /*    position: absolute;
-    top: 0; */
     height: 100vh;
     width: 100vw;
+}
 
-    .bl_jumbotron_slide {
-        padding: 0;
-        margin: 0;
+.bl_jumbotron_slide {
+    padding: 0;
+    margin: 0;
 
-        list-style: none;
-    }
+    list-style: none;
 }
 
 .bl_jumbotron_slideItem img {
@@ -168,24 +159,24 @@
     z-index: 10;
     margin: 0;
 
-    /* フォント指定 */
+    /* 文字設定 */
     color: #ffffff;
     font-size: 4.375rem;
     font-weight: bold;
-    line-height: normal;
-    letter-spacing: .05em;
+    @include m.letterSpacingAdjustment(.05em);
+    white-space: nowrap;
 }
 
 .bl_jumbotron_subcopy {
-    padding-top: 20px;
-    margin: 0;
-
-    /* フォント指定 */
+    /* 文字設定 */
     color: #ffffff;
     font-size: 2.5rem;
     font-weight: bold;
-    line-height: normal;
-    letter-spacing: .05em;
+    @include m.letterSpacingAdjustment(.05em);
+
+    /* 余白設定 */
+    padding-top: 20px;
+    margin: 0;
 }
 
 /*--- タイトル（h2） ---*/
@@ -196,14 +187,14 @@
 
     &>h2 {
         display: inline-block;
-        margin: 0 233px 0 0;
-
-        /* フォント指定 */
+        /* 文字設定 */
         font-size: 3.75rem;
         font-weight: bold;
         font-style: italic;
         @include m.letterSpacingAdjustment(.05em);
-        line-height: normal;
+
+        /* 余白設定 */
+        margin: 0 233px 0 0;
     }
 
     &::after {
@@ -239,7 +230,6 @@
 
         &>h2 {
             @include m.letterSpacingAdjustment(.1em);
-            letter-spacing: .1em;
             margin: 0 229px 0 0;
         }
     }
@@ -263,13 +253,14 @@
 
 /*--- メッセージ（主張） ---*/
 .el_msg {
+    /* 文字設定 */
     text-align: center;
-
-    /* フォント指定 */
     font-weight: bold;
     font-size: 1.875rem;
-    letter-spacing: .05em;
+    @include m.letterSpacingAdjustment(.05em);
     @include m.lineHeightAdjustment(1.666666);
+
+    /* 余白設定 */
     margin: 0;
 
     /* フォント調整 */
@@ -286,51 +277,50 @@
 .bl_media {
     display: flex;
     align-items: center;
+}
 
-    .bl_media_body {
-        width: 44%;
-        margin-right: 12%;
-    }
+.bl_media_body {
+    width: 44%;
+    margin-right: 12%;
+}
 
-    .bl_media_txt {
-        /* フォント指定 */
-        font-weight: bold;
-        @include m.lineHeightAdjustment(1.875);
-        letter-spacing: .05em;
-        margin: 0;
-    }
+.bl_media_txt {
+    /* 文字設定 */
+    font-weight: bold;
+    @include m.letterSpacingAdjustment(.05em);
+    @include m.lineHeightAdjustment(1.875);
+    margin: 0;
+}
 
-    .bl_media_imgWrapper {
-        width: 44%;
-        margin: 0;
-    }
+.bl_media_imgWrapper {
+    width: 44%;
+
+    /* 余白設定 */
+    margin: 0;
 }
 
 /*--- 半透明テキスト ---*/
 .el_opacityTxt {
     opacity: 5%;
 
-    /* フォント指定 */
+    /* 文字設定 */
     color: #171717;
     font-weight: bold;
     font-size: 5.625rem;
     @include m.letterSpacingAdjustment(.05em);
-    line-height: normal;
-
-    /* 改行しない */
     white-space: nowrap;
-}
 
-/* 右寄せ */
-.el_opacityTxt__right {
-    display: flex;
-    justify-content: right;
-}
+    /* 右寄せ */
+    &.el_opacityTxt__right {
+        display: flex;
+        justify-content: right;
+    }
 
-/* 白 */
-.el_opacityTxt__white {
-    opacity: 10%;
-    color: #ffffff;
+    /* 白 */
+    &.el_opacityTxt__white {
+        opacity: 10%;
+        color: #ffffff;
+    }
 }
 
 /*--- 背景画像 ---*/
@@ -362,10 +352,12 @@
 }
 
 .bl_card_txt {
-    margin: 25px 20px 26px 20px;
-
-    letter-spacing: .05em;
+    /* 文字設定 */
+    @include m.letterSpacingAdjustment(.05em);
     @include m.lineHeightAdjustment(1.875);
+
+    /* 余白設定 */
+    margin: 25px 20px 26px 20px;
 
     /* フォント調整 */
     &::before {
@@ -380,6 +372,8 @@
 .bl_cardUnit__col3 {
     &>.bl_card {
         width: 32%;
+
+        /* 余白設定 */
         margin-right: 2%;
 
         /* 相殺対象（★） */
@@ -387,6 +381,7 @@
     }
 
     &>.bl_card:nth-of-type(3n) {
+        /* 一番右のカードに右側余白は不要 */
         margin-right: 0;
     }
 }
@@ -404,115 +399,131 @@
 
 /*--- ボタン ---*/
 .el_roundedBtn {
+    /* 文字は上下中央揃え */
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /* 中央揃え */
+    margin: 0 auto;
+
+    /* サイズ設定 */
     box-sizing: border-box;
     height: 59px;
     width: 235px;
-    margin: 0 auto;
+
+    /* ボタンの装飾設定 */
     background-color: #f7d43f;
     box-shadow: 0 0 6px #1b1310;
     border-radius: 29.5px;
     border: none;
-    text-decoration: none;
 
-    /* フォント指定 */
+    /* 文字設定 */
     color: #171717;
+    text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
     @include m.letterSpacingAdjustment(.05em);
-    line-height: 1.875;
-    text-align: center;
 }
 
 /*--- 画像付きリンク ---*/
 .bl_imgLinks {
     display: flex;
-    padding: 0;
-    margin: 0;
-
-    flex-wrap: nowrap;
     list-style: none;
 
-    .bl_imgLinks_img {
-        flex: 1;
-        background-position: center center;
-        background-size: cover;
-        aspect-ratio: 3/2;
+    /* 余白設定 */
+    padding: 0;
+    margin: 0;
+}
 
-        &.bl_imgLinks_img__hearing {
-            background-image: url(../img/service-img01@2x.jpg);
-        }
+.bl_imgLinks_img {
+    flex: 1;
+    background-position: center center;
+    background-size: cover;
+    aspect-ratio: 3/2;
 
-        &.bl_imgLinks_img__planning {
-            background-image: url(../img/service-img02@2x.jpg);
-        }
-
-        &.bl_imgLinks_img__direction {
-            background-image: url(../img/sevice-img03@2x.jpg);
-        }
+    &.bl_imgLinks_img__hearing {
+        background-image: url(../img/service-img01@2x.jpg);
     }
 
-    .bl_imgLinks_link {
-        display: inline-block;
-        height: 100%;
-        width: 100%;
-        padding-top: 135px;
+    &.bl_imgLinks_img__planning {
+        background-image: url(../img/service-img02@2x.jpg);
+    }
 
+    &.bl_imgLinks_img__direction {
+        background-image: url(../img/sevice-img03@2x.jpg);
+    }
+}
 
-        text-decoration: none;
-        text-align: center;
+.bl_imgLinks_link {
+    /* 文字は上下中央揃え */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        /* フォント指定 */
-        color: #ffffff;
-        font-size: 2.5rem;
-        font-weight: bold;
-        font-style: italic;
-        letter-spacing: .05em;
-        line-height: 1.25;
+    /* クリック可能エリアは画像いっぱい */
+    height: 100%;
+    width: 100%;
 
-        &:hover {
-            background-color: rgba(40, 47, 53, 70%);
-        }
+    /* リンクのデコレーションを無効化 */
+    text-decoration: none;
+
+    /* 文字設定 */
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-style: italic;
+    @include m.letterSpacingAdjustment(.05em);
+
+    /* ホバー時、フォーカス時の設定 */
+    &:hover,
+    &:focus {
+        background-color: rgba(40, 47, 53, 70%);
     }
 }
 
 /*--- CTAエリア ---*/
 .bl_cta_txt {
+    /* 余白設定 */
     margin-top: 0;
     margin-bottom: 45px;
 
-    text-align: center;
-    /* フォント指定 */
+
+    /* 文字設定 */
     color: #ffffff;
+    text-align: center;
     font-size: 1.25rem;
-    line-height: 1.45;
-    letter-spacing: .05em;
+    @include m.letterSpacingAdjustment(.05em);
+    @include m.lineHeightAdjustment(1.45);
 }
 
 /*--- フッター ---*/
 .el_copyRight {
+    /* 余白設定 */
     margin: 0;
 
-    /* フォント指定 */
+    /* 文字設定 */
     font-size: .875rem;
     font-weight: bold;
-    line-height: normal;
     @include m.letterSpacingAdjustment(.05em);
 }
 
 /*--- Contactページ ---*/
 /*--- メインビジュアル ---*/
 .bl_mainVisual {
+    /* 透過文字の基準点にする */
     position: relative;
+
+    /* サイズ設定 */
     height: 453px;
     width: 100vw;
 
+    /* 画像設定 */
     background-image: url(../contact/img/contact-page-bgi@2x.jpg);
     background-position: center center;
     background-size: cover;
 
+    /* 透過文字 */
     .el_opacityTxt {
         position: absolute;
         bottom: 40px;
@@ -526,17 +537,17 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: 0;
-
     transform: translate(-50%, -50%);
 
-    /* フォント指定 */
+    /* 文字設定 */
+    color: #ffffff;
     font-size: 3.75rem;
     font-style: italic;
     font-weight: bold;
-    line-height: normal;
     @include m.letterSpacingAdjustment(.1em);
-    color: #ffffff;
+
+    /* 余白設定 */
+    margin: 0;
 }
 
 /*--- お問い合わせフォーム ---*/
@@ -546,11 +557,12 @@
     /* 余白設定 */
     /* 画面幅が700px以下になったとき、
         ギチギチにならないように左右に30pxずつ余白を設ける */
-    padding: 0 30px;    
+    padding: 0 30px;
     margin: 0 auto;
 }
 
 .bl_contactForm_item {
+    /* 余白設定 */
     margin-bottom: 21px;
 
     input[type="text"],
@@ -558,11 +570,11 @@
     input[type="email"],
     textarea {
         width: 100%;
-
-
         border: 1px solid #141414;
 
         /* 元のデザインを消去 */
+        -webkit-appearance: none;
+        -moz-appearance: none;
         appearance: none;
     }
 
@@ -581,12 +593,12 @@
 /* 項目名 */
 .bl_contactForm_ttl {
     display: block;
-    margin: 0 0 4px 0;    
 
-    /* フォント指定 */
-    line-height: normal;
+    /* 文字設定 */
     @include m.letterSpacingAdjustment(.05em);
 
+    /* 余白設定 */
+    margin: 0 0 4px 0;
 }
 
 /* チェックボックスを横並びにする */
@@ -596,6 +608,7 @@
 
 /* チェックボックス */
 .bl_checkbox {
+    /* チェックボックスとラベルを中央揃えにする */
     display: inline-flex;
     align-items: center;
 
@@ -606,6 +619,8 @@
         margin: 0 10px 0 0;
 
         /* 元のデザインを消去 */
+        -webkit-appearance: none;
+        -moz-appearance: none;
         appearance: none;
 
         /* ボックスデザインを定義 */
@@ -625,8 +640,7 @@
             position: absolute;
             display: inline-block;
 
-            /* チェックマーク */
-
+            /* チェックマーク設定 */
             content: "\f00c";
             font-family: "Font Awesome 5 Free";
             font-weight: 900;
@@ -642,9 +656,9 @@
     label {
         margin-right: 20px;
 
-        /* フォント設定 */
-        letter-spacing: .05em;
-        line-height: normal;        
+        /* 文字設定 */
+        @include m.letterSpacingAdjustment(.05em);
+        white-space: nowrap;
     }
 }
 
