@@ -3,12 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
+
+  <!-- ページ設定 -->
   <title>クリ★スタコーディング課題中級編</title>
   <meta name="keywards" content="ページのキーワード１,ページのキーワード２,ページのキーワード３">
   <meta name="description" content="ページの説明">
-  <meta name="viewport" content="width-device-width, initial-scale=1">
   <link rel="shortcut icon" href="PC用アイコンのパスを指定">
   <link rel="apple-touch-icon" href="スマホ用アイコンのパスを指定">
+
+  <!-- レスポンシブ対応 -->
+  <meta name="viewport" content="width-device-width, initial-scale=1">
 
   <!-- 模写コーディングのため、Basic認証をかける -->
   <meta name="robots" content="noindex , nofollow">
@@ -30,15 +34,23 @@
 <body class="pg_top">
   <header class="ly_header">
     <div class="ly_header_inner">
-      <a class="el_sitettl" href="index.html">Cresta Design</a>
-      <nav>
-        <ul class="bl_headerNav">
-          <li><a class="bl_headerNav_link" href="#id_concept">Concept</a></li>
-          <li><a class="bl_headerNav_link" href="#id_service">Service</a></li>
-          <li><a class="bl_headerNav_link" href="#id_works">Works</a></li>
-          <li><a class="bl_headerNav_link" href="#id_contact">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="bl_headerUtils">
+        <a class="bl_headerUtils_ttl" href="index.html">Cresta Design</a>
+        <button class="bl_toggleBtn">
+          <span class="bl_toggleBtn_bar bl_toggleBtn_bar__top"></span>
+          <span class="bl_toggleBtn_bar bl_toggleBtn_bar__mid"></span>
+          <span class="bl_toggleBtn_bar bl_toggleBtn_bar__bottom"></span>
+        </button>
+        <nav class="bl_headerNav">
+          <ul class="bl_headerNav_inner">
+            <li><a class="bl_headerNav_link" href="#id_concept">Concept</a></li>
+            <li><a class="bl_headerNav_link" href="#id_service">Service</a></li>
+            <li><a class="bl_headerNav_link" href="#id_works">Works</a></li>
+            <li><a class="bl_headerNav_link" href="#id_contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /.bl_headerUtils -->
     </div>
     <!-- /.ly_header_inner -->
   </header>
@@ -60,7 +72,7 @@
       <div class="bl_jumbotron_inner">
         <div class="bl_jumbotron_txt">
           <h3 class="bl_jumbotron_maincopy">Design for Smile.</h3>
-          <p class="bl_jumbotron_subcopy">快適なオフィスをデザインする</p>
+          <p class="bl_jumbotron_subcopy">快適なオフィスを<br class="md_only">デザインする</p>
         </div>
         <!-- /.bl_jumbotron_txt -->
       </div>

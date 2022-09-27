@@ -1,3 +1,19 @@
+/* トグルボタン制御 */
+$('.bl_toggleBtn').click(function () {
+  $(this).toggleClass('is_close');
+  $('.bl_headerNav').toggleClass('is_fade');
+  $('body').toggleClass('is_noscroll');
+});
+
+/* メニューのリンクが押下されたときに、ナビゲーションを隠す */
+if ($(window).width() < 768) {
+  $('.bl_headerNav_link').click(function () {
+    $('.bl_headerNav').removeClass('is_fade');
+    $('.bl_toggleBtn').removeClass('is_close');
+    $('body').removeClass('is_noscroll');
+  });
+}
+
 /* ジャンボトロン：画像スライド */
 $('.bl_jumbotron_slide').slick({
   autoplay: true,  /* 自動再生 */
