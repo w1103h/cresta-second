@@ -130,6 +130,9 @@
 .bl_jumbotron {
     height: 100vh;
     width: 100vw;
+
+    /* slick(jQuery)を適応すると、右に余白ができてしまう対策 */
+    overflow: hidden;
 }
 
 .bl_jumbotron_slide {
@@ -139,8 +142,10 @@
     list-style: none;
 }
 
-.bl_jumbotron_slideItem img {
-    width: 100%;
+.bl_jumbotron_slideItem img{
+    height: 100vh;
+    width: 100vw;
+    object-fit:cover;
 }
 
 .bl_jumbotron_inner {
