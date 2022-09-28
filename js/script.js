@@ -21,14 +21,20 @@ $('.bl_jumbotron_slide').slick({
   fade: true, /* フェードオン */
   speed: 1500, /* 切り替えにかかる時間（ミリ秒） */
   infinite: true,  /* 無限リピートオン */
-  draggable: true /* マウスドラッグオン */
+  draggable: true, /* マウスドラッグオン */
+
+  /* タブレット幅以下の場合はアニメーションを無効化 */
+  responsive: [{
+    breakpoint: 768,
+    settings: "unslick",
+  },],
 });
 
 /* ヘッダー：途中から背景色を入れる */
-$(window).scroll(function(){
-  if($(window).height() < $(window).scrollTop()){
+$(window).scroll(function () {
+  if ($(window).height() < $(window).scrollTop()) {
     $('.ly_header').addClass('ly_header__bg');
-  }else{
+  } else {
     $('.ly_header').removeClass('ly_header__bg');
   }
 })
