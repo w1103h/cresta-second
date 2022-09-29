@@ -2,13 +2,18 @@
 <html lang="ja">
 
 <head>
+  <!-- エンコード指定 -->
   <meta charset="UTF-8">
+
+  <!-- ページ設定 -->
   <title>クリ★スタコーディング課題中級編</title>
   <meta name="keywards" content="クリスタ,お問い合わせ">
   <meta name="description" content="お問い合わせページです">
-  <meta name="viewport" content="width-device-width, initial-scale=1">
-  <link rel="shortcut icon" href="PC用アイコンのパスを指定">
-  <link rel="apple-touch-icon" href="スマホ用アイコンのパスを指定">
+  <link rel="shortcut icon" href="#">
+  <link rel="apple-touch-icon" href="#">
+
+  <!-- レスポンシブ対応 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- 模写コーディングのため、Basic認証をかける -->
   <meta name="robots" content="noindex , nofollow">
@@ -32,15 +37,23 @@
 <body class="pg_contact">
   <header class="ly_header ly_header__contact">
     <div class="ly_header_inner">
-      <a class="el_sitettl" href="../index.html">Cresta Design</a>
-      <nav>
-        <ul class="bl_headerNav">
-          <li><a class="bl_headerNav_link" href="#">Concept</a></li>
-          <li><a class="bl_headerNav_link" href="#">Service</a></li>
-          <li><a class="bl_headerNav_link" href="#">Works</a></li>
-          <li><a class="bl_headerNav_link" href="#">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="bl_headerUtils">
+        <a class="bl_headerUtils_ttl" href="../index.html">Cresta Design</a>
+        <button class="bl_toggleBtn">
+          <span class="bl_toggleBtn_bar bl_toggleBtn_bar__top"></span>
+          <span class="bl_toggleBtn_bar bl_toggleBtn_bar__mid"></span>
+          <span class="bl_toggleBtn_bar bl_toggleBtn_bar__bottom"></span>
+        </button>
+        <nav class="bl_headerNav">
+          <ul class="bl_headerNav_inner">
+            <li><a class="bl_headerNav_link" href="../index.html#id_concept">Concept</a></li>
+            <li><a class="bl_headerNav_link" href="../index.html#id_service">Service</a></li>
+            <li><a class="bl_headerNav_link" href="../index.html#id_works">Works</a></li>
+            <li><a class="bl_headerNav_link" href="../index.html#id_contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /.bl_headerUtils -->
     </div>
     <!-- /.ly_header_inner -->
   </header>
@@ -53,52 +66,52 @@
     <!-- /.bl_mainVisual -->
     <div class="ly_cont">
       <form class="bl_contactForm" action="#">
-        <div class="bl_contactForm_item hp_mb20">
-          <p class="bl_contactForm_ttl">お問い合わせ内容</p>
-          <div class="bl_checkboxUnit">
-            <div class="bl_checkbox">
-              <input id="documentRequest" type="checkbox" name="contact-type" value="資料請求">
-              <label for="documentRequest">資料請求</label>
+        <div class="bl_contactForm_input">
+          <div class="bl_contactForm_item">
+            <p class="bl_contactForm_ttl">お問い合わせ内容</p>
+            <div class="bl_checkboxUnit">
+              <div class="bl_checkbox">
+                <input id="documentRequest" type="checkbox" name="contact-type" value="資料請求">
+                <label for="documentRequest">資料請求</label>
+              </div>
+              <!-- /.bl_checkbox -->
+              <div class="bl_checkbox">
+                <input id="telephoneConsultation" type="checkbox" name="contact-type" value="お電話でのご相談を希望">
+                <label for="telephoneConsultation">お電話でのご相談を希望</label>
+              </div>
+              <!-- /.bl_checkbox -->
+              <div class="bl_checkbox">
+                <input id="application" type="checkbox" name="contact-type" value="申し込み">
+                <label for="application">申し込み</label>
+              </div>
+              <!-- /.bl_checkbox -->
             </div>
-            <!-- /.bl_checkbox -->
-            <div class="bl_checkbox">
-              <input id="telephoneConsultation" type="checkbox" name="contact-type" value="お電話でのご相談を希望">
-              <label for="telephoneConsultation">お電話でのご相談を希望</label>
-            </div>
-            <!-- /.bl_checkbox -->
-            <div class="bl_checkbox">
-              <input id="application" type="checkbox" name="contact-type" value="申し込み">
-              <label for="application">申し込み</label>
-            </div>
-            <!-- /.bl_checkbox -->
+            <!-- /.bl_checkboxUnit -->
           </div>
-          <!-- /.bl_checkboxUnit -->
+          <!-- /.bl_contactForm_item -->
+          <div class="bl_contactForm_item">
+            <label class="bl_contactForm_ttl bl_contactForm_ttl__smsp" for="name">担当者名</label>
+            <input type="text" id="name" name="your-name">
+          </div>
+          <!-- /.bl_contactForm_item -->
+          <div class="bl_contactForm_item">
+            <label class="bl_contactForm_ttl bl_contactForm_ttl__smsp" for="tel">電話番号</label>
+            <input type="tel" id="tel" name="your-tel">
+          </div>
+          <!-- /.bl_contactForm_item -->
+          <div class="bl_contactForm_item">
+            <label class="bl_contactForm_ttl bl_contactForm_ttl__smsp" for="email">メールアドレス</label>
+            <input type="email" id="email" name="your-email">
+          </div>
+          <!-- /.bl_contactForm_item -->
+          <div class="bl_contactForm_item">
+            <label class="bl_contactForm_ttl" for="message">その他</label>
+            <textarea name="your-message" id="message" cols="30" rows="10"></textarea>
+          </div>
+          <!-- /.bl_contactForm_item -->
         </div>
-        <!-- /.bl_contactForm_item -->
-        <div class="bl_contactForm_item">
-          <label class="bl_contactForm_ttl hp_mb2" for="name">担当者名</label>
-          <input type="text" id="name" name="your-name">
-        </div>
-        <!-- /.bl_contactForm_item -->
-        <div class="bl_contactForm_item">
-          <label class="bl_contactForm_ttl hp_mb2" for="tel">電話番号</label>
-          <input type="tel" id="tel" name="your-tel">
-        </div>
-        <!-- /.bl_contactForm_item -->
-        <div class="bl_contactForm_item">
-          <label class="bl_contactForm_ttl hp_mb2" for="email">メールアドレス</label>
-          <input type="email" id="email" name="your-email">
-        </div>
-        <!-- /.bl_contactForm_item -->
-        <div class="bl_contactForm_item hp_mb80">
-          <label class="bl_contactForm_ttl hp_mb2" for="message">その他</label>
-          <textarea name="your-message" id="message" cols="30" rows="10"></textarea>
-        </div>
-        <!-- /.bl_contactForm_item -->
-        <div class="ta_center">
-          <button class="el_roundedBtn" type="button">Submit</button>
-        </div>
-        <!-- /.ta_center -->
+        <!-- /.bl_contactForm_input -->
+        <button class="el_roundedBtn" type="button">Submit</button>
       </form>
     </div>
     <!-- ly_cont -->
@@ -108,6 +121,10 @@
     <p class="el_copyRight">&copycresta.design all rights reserved</p>
   </footer>
 
+  <!-- Java Script 読み込み -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 
 </html>

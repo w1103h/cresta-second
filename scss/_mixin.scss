@@ -8,20 +8,20 @@
     $line-height: line-heightの指定値
 ----------*/
 @mixin lineHeightAdjustment($line-height) {
-
     line-height: $line-height;
-    
+
     &::before {
-        content: "";
         display: block;
-        margin-top: calc(1 - (#{$line-height}) * 0.5em);
+        margin-top: calc(1 - (#{$line-height}) * .5em);
+
+        content: "";
     }
 
     &::after {
-        content: "";
         display: block;
-        margin-bottom: calc(1 - (#{$line-height}) * 0.5em);
+        margin-bottom: calc(1 - (#{$line-height}) * .5em);
 
+        content: "";
     }
 }
 
@@ -32,8 +32,9 @@
 @mixin letterSpacingAdjustment($letter-spacing) {
     letter-spacing: $letter-spacing;
 
-    &::after{
-        content: '';
+    &::after {
         margin-left: -$letter-spacing;
+
+        content: "";
     }
 }

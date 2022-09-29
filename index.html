@@ -2,13 +2,18 @@
 <html lang="ja">
 
 <head>
+  <!-- エンコード指定 -->
   <meta charset="UTF-8">
+
+  <!-- ページ設定 -->
   <title>クリ★スタコーディング課題中級編</title>
   <meta name="keywards" content="ページのキーワード１,ページのキーワード２,ページのキーワード３">
   <meta name="description" content="ページの説明">
-  <meta name="viewport" content="width-device-width, initial-scale=1">
-  <link rel="shortcut icon" href="PC用アイコンのパスを指定">
-  <link rel="apple-touch-icon" href="スマホ用アイコンのパスを指定">
+  <link rel="shortcut icon" href="#">
+  <link rel="apple-touch-icon" href="#">
+
+  <!-- レスポンシブ対応 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- 模写コーディングのため、Basic認証をかける -->
   <meta name="robots" content="noindex , nofollow">
@@ -30,15 +35,23 @@
 <body class="pg_top">
   <header class="ly_header">
     <div class="ly_header_inner">
-      <a class="el_sitettl" href="index.html">Cresta Design</a>
-      <nav>
-        <ul class="bl_headerNav">
-          <li><a class="bl_headerNav_link" href="#id_concept">Concept</a></li>
-          <li><a class="bl_headerNav_link" href="#id_service">Service</a></li>
-          <li><a class="bl_headerNav_link" href="#id_works">Works</a></li>
-          <li><a class="bl_headerNav_link" href="#id_contact">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="bl_headerUtils">
+        <a class="bl_headerUtils_ttl" href="index.html">Cresta Design</a>
+        <button class="bl_toggleBtn">
+          <span class="bl_toggleBtn_bar bl_toggleBtn_bar__top"></span>
+          <span class="bl_toggleBtn_bar bl_toggleBtn_bar__mid"></span>
+          <span class="bl_toggleBtn_bar bl_toggleBtn_bar__bottom"></span>
+        </button>
+        <nav class="bl_headerNav">
+          <ul class="bl_headerNav_inner">
+            <li><a class="bl_headerNav_link" href="#id_concept">Concept</a></li>
+            <li><a class="bl_headerNav_link" href="#id_service">Service</a></li>
+            <li><a class="bl_headerNav_link" href="#id_works">Works</a></li>
+            <li><a class="bl_headerNav_link" href="#id_contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /.bl_headerUtils -->
     </div>
     <!-- /.ly_header_inner -->
   </header>
@@ -60,7 +73,7 @@
       <div class="bl_jumbotron_inner">
         <div class="bl_jumbotron_txt">
           <h3 class="bl_jumbotron_maincopy">Design for Smile.</h3>
-          <p class="bl_jumbotron_subcopy">快適なオフィスをデザインする</p>
+          <p class="bl_jumbotron_subcopy">快適なオフィスを<br class="md_only">デザインする</p>
         </div>
         <!-- /.bl_jumbotron_txt -->
       </div>
@@ -74,9 +87,8 @@
         <span class="el_h2Heading">
           <h2>CONCEPT</h2>
         </span>
-        <div class="ly_cont_inner ly_cont_inner__pt70">
-          <p class="el_msg hp_pb60">“働きたくなる空間”をデザインすることで<br>
-            人々を幸せにする。</p>
+        <div class="ly_cont_inner ly_cont_inner__concept">
+          <p class="el_msg">“働きたくなる空間”をデザインする<br class="md_only">ことで<br class="lg_only">人々を幸せにする。</p>
           <div class="bl_media">
             <div class="bl_media_body">
               <p class="bl_media_txt">
@@ -98,12 +110,12 @@
 
     <!-- Works -->
     <section class="ly_section el_bgimg el_bgimg__works" id="id_works">
-      <div class="ly_cont ly_cont__pt104">
+      <div class="ly_cont">
         <span class="el_h2Heading el_h2Heading__works">
           <h2>Works</h2>
         </span>
         <div class="ly_cont_inner">
-          <div class="bl_cardUnit bl_cardUnit__col3 hp_pb80">
+          <div class="bl_cardUnit bl_cardUnit__col3">
             <div class="bl_card">
               <figure class="bl_card_imgWrapper">
                 <img src="img/card-img01@2x.jpg" alt="">
@@ -156,15 +168,18 @@
         <span class="el_h2Heading el_h2Heading__service">
           <h2>Service</h2>
         </span>
-        <div class="ly_cont_full">
-          <ul class="bl_imgLinks">
-            <li class="bl_imgLinks_img bl_imgLinks_img__hearing"><span class="bg_gray30"><a class="bl_imgLinks_link"
-                  href="#">Hearing</a></span></li>
-            <li class="bl_imgLinks_img bl_imgLinks_img__planning"><span class="bg_gray30"><a class="bl_imgLinks_link"
-                  href="#">Planning</a></span></li>
-            <li class="bl_imgLinks_img bl_imgLinks_img__direction"><span class="bg_gray30"><a class="bl_imgLinks_link"
-                  href="#">Direction</a></span></li>
-          </ul>
+        <div class="ly_cont_inner ly_cont_inner__service">
+          <div class="ly_cont_full">
+            <ul class="bl_imgLinks">
+              <li class="bl_imgLinks_img bl_imgLinks_img__hearing"><span class="bg_gray30"><a class="bl_imgLinks_link"
+                    href="#">Hearing</a></span></li>
+              <li class="bl_imgLinks_img bl_imgLinks_img__planning"><span class="bg_gray30"><a class="bl_imgLinks_link"
+                    href="#">Planning</a></span></li>
+              <li class="bl_imgLinks_img bl_imgLinks_img__direction"><span class="bg_gray30"><a class="bl_imgLinks_link"
+                    href="#">Direction</a></span></li>
+            </ul>
+          </div>
+          <!-- /.ly_cont_inner -->
         </div>
         <!-- /.ly_cont_full -->
         <span class="el_opacityTxt el_opacityTxt__right">Our Service</span>
@@ -178,7 +193,7 @@
         <span class="el_h2Heading el_h2Heading__contact">
           <h2>Contact</h2>
         </span>
-        <div class="ly_cont_inner">
+        <div class="ly_cont_inner ly_cont_inner__contact">
           <div class="bl_cta">
             <p class="bl_cta_txt">お気軽にご相談ください。</p>
             <a class="el_roundedBtn" href="contact/index.html">Contact</a>
