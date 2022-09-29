@@ -132,7 +132,7 @@
     font-size: 1.625rem;
     font-weight: bold;
     font-style: italic;
-    @include m.letterSpacingAdjustment(.05em);
+    @include m.letterSpacingAdjustment(0.05em);
     white-space: nowrap;
 
     /* 余白設定 */
@@ -170,7 +170,7 @@
     color: #ffffff;
     font-weight: bold;
     font-style: italic;
-    @include m.letterSpacingAdjustment(.05em);
+    @include m.letterSpacingAdjustment(0.05em);
     text-decoration: none;
 }
 
@@ -202,7 +202,7 @@
         width: 100vw;
         height: 100vh;
         background-color: #1b1310;
-        transition: all .5s;
+        transition: all 0.5s;
     }
 
     /* 
@@ -243,9 +243,14 @@
         height: 20px;
 
         /* 元のデザインを消去 */
+        -webkit-appearance: none;
+        -moz-appearance: none;
         appearance: none;
         background-color: transparent;
         border: none;
+
+        /* 押せそうなボタンを表現 */
+        cursor: pointer;
 
         /* 余白設定 */
         margin: 0;
@@ -260,7 +265,7 @@
         width: 30px;
         height: 3px;
         background-color: #ffffff;
-        transition: all .3s;
+        transition: all 0.3s;
 
         /* 一段目のバー */
         &.bl_toggleBtn_bar__top {
@@ -328,6 +333,7 @@
 .bl_jumbotron_slideItem img {
     height: 100vh;
     width: 100vw;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -351,7 +357,7 @@
     color: #ffffff;
     font-size: min(calc(4.375rem + ((1vw - 0.9rem) * 4.9107)), 4.375rem);
     font-weight: bold;
-    @include m.letterSpacingAdjustment(.05em);
+    @include m.letterSpacingAdjustment(0.05em);
     white-space: nowrap;
 }
 
@@ -360,7 +366,7 @@
     color: #ffffff;
     font-size: min(calc(2.5rem + ((1vw - 0.9rem) * 1.4881)), 2.5rem);
     font-weight: bold;
-    @include m.letterSpacingAdjustment(.05em);
+    @include m.letterSpacingAdjustment(0.05em);
     white-space: nowrap;
 
     /* 余白設定 */
@@ -446,7 +452,7 @@
         font-size: 3.75rem;
         font-weight: bold;
         font-style: italic;
-        @include m.letterSpacingAdjustment(.05em);
+        @include m.letterSpacingAdjustment(0.05em);
 
         /* 余白設定 */
         margin: 0 230px 0 0;
@@ -473,7 +479,7 @@
         /* タイトル文字 */
         &>h2 {
             color: #ffffff;
-            @include m.letterSpacingAdjustment(.1em);
+            @include m.letterSpacingAdjustment(0.1em);
         }
 
         /* 横のバー */
@@ -487,7 +493,7 @@
 
         /* タイトル文字 */
         &>h2 {
-            @include m.letterSpacingAdjustment(.1em);
+            @include m.letterSpacingAdjustment(0.1em);
         }
     }
 
@@ -499,7 +505,7 @@
         /* タイトル文字 */
         &>h2 {
             color: #ffffff;
-            @include m.letterSpacingAdjustment(.1em);
+            @include m.letterSpacingAdjustment(0.1em);
         }
 
         /* 横のバー */
@@ -518,7 +524,7 @@
         &>h2 {
             /* 文字設定 */
             font-size: 1.875rem;
-            @include m.letterSpacingAdjustment(.05em);
+            @include m.letterSpacingAdjustment(0.05em);
 
             /* 余白設定 */
             margin: 0 121px 0 0;
@@ -560,7 +566,7 @@
     font-size: 3.75rem;
     font-style: italic;
     font-weight: bold;
-    @include m.letterSpacingAdjustment(.1em);
+    @include m.letterSpacingAdjustment(0.1em);
 
     /* 余白設定 */
     margin: 0;
@@ -587,7 +593,7 @@
     text-align: center;
     font-weight: bold;
     font-size: min(calc(1.875rem + ((1vw - 0.9rem) * 1.4881)), 1.875rem);
-    @include m.letterSpacingAdjustment(.05em);
+    @include m.letterSpacingAdjustment(0.05em);
     @include m.lineHeightAdjustment(1.666666);
 
     /* 余白設定 */
@@ -595,11 +601,11 @@
 
     /* フォント調整 */
     &::before {
-        margin-top: -2px;
+        margin-top: -3px;
     }
 
     &::after {
-        margin-bottom: -2px;
+        margin-bottom: -3px;
     }
 }
 
@@ -640,7 +646,7 @@
 .bl_media_txt {
     /* 文字設定 */
     font-weight: bold;
-    @include m.letterSpacingAdjustment(.05em);
+    @include m.letterSpacingAdjustment(0.05em);
     @include m.lineHeightAdjustment(1.875);
     margin: 0;
 
@@ -684,7 +690,9 @@
 
         &>img {
             aspect-ratio: 345 / 150;
+            -o-object-fit: cover;
             object-fit: cover;
+            -o-object-position: center bottom;
             object-position: center bottom;
         }
     }
@@ -700,7 +708,7 @@
     color: #171717;
     font-weight: bold;
     font-size: 5.625rem;
-    @include m.letterSpacingAdjustment(.05em);
+    @include m.letterSpacingAdjustment(0.05em);
     white-space: nowrap;
 
     /* 右寄せ */
@@ -767,7 +775,7 @@
 
 .bl_card_txt {
     /* 文字設定 */
-    @include m.letterSpacingAdjustment(.05em);
+    @include m.letterSpacingAdjustment(0.05em);
     @include m.lineHeightAdjustment(1.875);
 
     /* 余白設定 */
@@ -846,7 +854,7 @@
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
-    @include m.letterSpacingAdjustment(.05em);
+    @include m.letterSpacingAdjustment(0.05em);
 }
 
 /*----------------------
@@ -898,7 +906,7 @@
     font-size: 2.5rem;
     font-weight: bold;
     font-style: italic;
-    @include m.letterSpacingAdjustment(.05em);
+    @include m.letterSpacingAdjustment(0.05em);
 
     /* ホバー時、フォーカス時の設定 */
     &:hover,
@@ -941,7 +949,7 @@
     text-align: center;
     font-size: 1.25rem;
     font-weight: bold;
-    @include m.letterSpacingAdjustment(.05em);
+    @include m.letterSpacingAdjustment(0.05em);
     @include m.lineHeightAdjustment(1.45);
 }
 
@@ -961,9 +969,9 @@
     margin: 0;
 
     /* 文字設定 */
-    font-size: .875rem;
+    font-size: 0.875rem;
     font-weight: bold;
-    @include m.letterSpacingAdjustment(.05em);
+    @include m.letterSpacingAdjustment(0.05em);
 }
 
 /*----------------------
@@ -979,9 +987,14 @@
     margin: 0 auto;
 }
 
+.bl_contactForm_input {
+    /* 余白設定 */
+    margin-bottom: 80px;
+}
+
 .bl_contactForm_item {
     /* 余白設定 */
-    margin-bottom: 21px;
+    margin-bottom: 22px;
 
     input[type="text"],
     input[type="tel"],
@@ -1013,7 +1026,7 @@
     display: block;
 
     /* 文字設定 */
-    @include m.letterSpacingAdjustment(.05em);
+    @include m.letterSpacingAdjustment(0.05em);
 
     /* 余白設定 */
     margin: 0 0 4px 0;
@@ -1083,7 +1096,7 @@
             content: "\f00c";
             font-family: "Font Awesome 5 Free";
             font-weight: 900;
-            font-size: .5rem;
+            font-size: 0.5rem;
             opacity: 0;
         }
 
@@ -1096,7 +1109,7 @@
         margin-right: 20px;
 
         /* 文字設定 */
-        @include m.letterSpacingAdjustment(.05em);
+        @include m.letterSpacingAdjustment(0.05em);
         white-space: nowrap;
     }
 }
@@ -1141,34 +1154,4 @@
     width: 100%;
 
     background-color: rgba(23, 23, 23, 30%);
-}
-
-/* パディング指定 */
-.hp_pb60 {
-    padding-bottom: 60px !important;
-}
-
-.hp_pb70 {
-    padding-bottom: 70px !important;
-}
-
-.hp_pb80 {
-    padding-bottom: 80px !important;
-}
-
-/* マージン指定 */
-.hp_mb2 {
-    margin-bottom: 2px !important;
-}
-
-.hp_mb3 {
-    margin-bottom: 3px !important;
-}
-
-.hp_mb20 {
-    margin-bottom: 20px !important;
-}
-
-.hp_mb80 {
-    margin-bottom: 80px;
 }
