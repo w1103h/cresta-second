@@ -8,5 +8,5 @@ AdobeXDカンプからコーディングを行いました。
 jQueryを利用して、画像の自動スライド機能や、ハンバーガーボタンを実装しました。  
   
 ### 使用言語  
-HTML/CSS(SCSS)/jQuery
+HTML / CSS(SCSS) / jQuery
   
