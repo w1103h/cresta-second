@@ -10,3 +10,6 @@ jQueryを利用して、画像の自動スライド機能や、ハンバーガ�
 ### 使用言語  
 HTML / CSS(SCSS) / jQuery
   
+### normalize.css
+normalize.cssは、[v8.0.1](http://necolas.github.io/normalize.css/)をダウンロードして使用しています。
+
