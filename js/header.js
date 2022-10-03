@@ -1,9 +1,11 @@
 /* ヘッダー：途中から背景色を入れる */
 $(window).scroll(function () {
-  if ($(window).height() < $(window).scrollTop()) {
-    $(".ly_header").addClass("ly_header__bg");
-  } else {
-    $(".ly_header").removeClass("ly_header__bg");
+  if (!$(".bl_toggleBtn").hasClass("is_close")) {
+    if ($(window).height() < $(window).scrollTop()) {
+      $(".ly_header").addClass("ly_header__bg");
+    } else {
+      $(".ly_header").removeClass("ly_header__bg");
+    }
   }
 });
 
@@ -15,10 +17,10 @@ $(".bl_toggleBtn").click(function () {
 });
 
 /* メニューのリンクが押下されたときに、ナビゲーションを隠す */
-if ($(window).width() < 768) {
-  $(".bl_headerNav_link").click(function () {
+$(".bl_headerNav_link").click(function () {
+  if ($(window).width() < 768) {
     $(".bl_headerNav").removeClass("is_fade");
     $(".bl_toggleBtn").removeClass("is_close");
     $("body").removeClass("is_noscroll");
-  });
-}
+  }
+});
