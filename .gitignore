@@ -1,0 +1,13 @@
+contact/img/*
+css/normalize.css
+css/style.css.map
+css/style.min.css
+css/style.min.css.map
+img/*
+node_modules/
+.eslintrc.js
+.prettierrc.js
+.stylelintrc.js
+package.json
+package-lock.json
+.vscode/settings.json

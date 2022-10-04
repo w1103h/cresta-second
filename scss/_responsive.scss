@@ -1,0 +1,414 @@
+@use "mixin" as m;
+
+/*------------------------------------------------
+    ファイル名：_responsive.scss
+    機能：レスポンシブのスタイルを記述する
+--------------------------------------------------*/
+
+/*--- タブレット幅以下 ---*/
+@media screen and (max-width: 768px) {
+  /*----------------------
+    レイアウト
+  ------------------------*/
+  /* ヘッダー */
+  .ly_header {
+    padding: 30px 0;
+
+    /* コンタクトページ用 */
+    &.ly_header__contact {
+      padding: 30px 0;
+    }
+  }
+
+  /* ヘッダー（内側） */
+  .ly_header_inner {
+    padding: 0 15px;
+  }
+
+  /* コンテンツエリア */
+  .ly_cont {
+    width: 100vw;
+    padding: 100px 15px 40px 15px;
+  }
+
+  /* コンテンツエリア（内側） */
+  .ly_cont_inner {
+    padding: 50px 0 40px 0;
+    margin: 0 auto;
+
+    /* Conceptセクション用 */
+    &.ly_cont_inner__concept {
+      padding-top: 50px;
+    }
+
+    /* Service/Contactセクション用 */
+    &.ly_cont_inner__service,
+    &.ly_cont_inner__contact {
+      padding-top: 80px;
+    }
+  }
+
+  /*----------------------
+    ヘッダー
+  ------------------------*/
+  /* サイトタイトル */
+  .bl_headerUtils_ttl {
+    font-size: 1.625rem;
+  }
+
+  /* ヘッダーナビゲーション（内側） */
+  .bl_headerNav {
+    /* タブレット幅以下では、ナビゲーションを非表示（ボタンで表示させる） */
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+    /* 透明 */
+    opacity: 0;
+
+    /* 
+    ふわっと透明にするアニメーション
+    基本は黒背景を非表示
+    ハンバーガーボタン押下でふわっと黒背景が表示される 
+    */
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1b1310;
+    transition: all 0.5s;
+  }
+
+  /* 
+  ハンバーガーボタンが押下後、黒背景にする 
+  ↑の設定(transition)があるので、0.5sかけて徐々に表れる
+  */
+  .bl_headerNav.is_fade {
+    /* 不透明（黒背景） */
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* ヘッダーナビゲーション（内側） */
+  .bl_headerNav_inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: -30px;
+
+    & > li {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  /* ハンバーガーボタン */
+  .bl_toggleBtn {
+    position: relative;
+    z-index: 3;
+    display: block;
+
+    width: 30px;
+    height: 20px;
+
+    /* 元のデザインを消去 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+
+    /* 押せそうなボタンを表現 */
+    cursor: pointer;
+
+    /* 余白設定 */
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ハンバーガーボタン（クローズ）のスタイル：共通 */
+  .bl_toggleBtn_bar {
+    position: absolute;
+    display: block;
+
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: all 0.3s;
+
+    /* 一段目のバー */
+    &.bl_toggleBtn_bar__top {
+      top: 0;
+    }
+
+    /* 二段目のバー */
+    &.bl_toggleBtn_bar__mid {
+      top: 50%;
+
+      transform: translateY(-50%);
+    }
+
+    /* 三段目のバー */
+    &.bl_toggleBtn_bar__bottom {
+      bottom: 0;
+    }
+  }
+
+  /* ハンバーガーボタン（オープン）一段目のバー */
+  .bl_toggleBtn.is_close .bl_toggleBtn_bar.bl_toggleBtn_bar__top {
+    transform: translate(5px, 0px) rotate(45deg);
+  }
+
+  /* ハンバーガーボタン（オープン）二段目のバー */
+  .bl_toggleBtn.is_close .bl_toggleBtn_bar.bl_toggleBtn_bar__mid {
+    opacity: 0;
+  }
+
+  /* ハンバーガーボタン（オープン）三段目のバー */
+  .bl_toggleBtn.is_close .bl_toggleBtn_bar.bl_toggleBtn_bar__bottom {
+    transform: translate(5px, -17px) rotate(-45deg);
+  }
+
+  /* ハンバーガーボタンオープン時はスクロールしない */
+  .is_noscroll {
+    overflow: hidden;
+  }
+
+  /*----------------------
+    メインビジュアル
+  ------------------------*/
+  /* ジャンボトロン（文字） */
+  .bl_jumbotron_txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+  }
+
+  /* ジャンボトロン（メインコピー） */
+  .bl_jumbotron_maincopy {
+    /* 文字設定 */
+    font-size: 2.3125rem;
+  }
+
+  /* ジャンボトロン（サブコピー） */
+  .bl_jumbotron_subcopy {
+    /* 文字設定 */
+    font-size: 1.875rem;
+    @include m.lineHeightAdjustment(1.666666);
+
+    /* 余白設定 */
+    padding-top: 50px;
+  }
+
+  /*--- メインビジュアル（コンタクトページ用） ---*/
+  .bl_mainVisual {
+    /* サイズ設定 */
+    height: 360px;
+
+    /* 透過文字 */
+    .el_opacityTxt {
+      left: 15px;
+    }
+  }
+
+  /*----------------------
+    タイトル
+  ------------------------*/
+  /* セクションタイトル */
+  .el_h2Heading {
+    margin-left: 0;
+
+    /* タイトル文字 */
+    & > h2 {
+      /* 文字設定 */
+      font-size: 1.875rem;
+      @include m.letterSpacingAdjustment(0.05em);
+
+      /* 余白設定 */
+      margin: 0 121px 0 0;
+    }
+
+    /* 横のバー */
+    &::after {
+      width: 90px;
+    }
+
+    /* タイトル文字 */
+    &.el_h2Heading__works > h2,
+    &.el_h2Heading__service > h2,
+    &.el_h2Heading__contact > h2 {
+      /* 余白設定 */
+      margin: 0 130px 0 0;
+    }
+
+    /* 文字の右側のバー */
+    &.el_h2Heading__works::after,
+    &.el_h2Heading__service::after,
+    &.el_h2Heading__contact ::after {
+      width: 100px;
+    }
+  }
+
+  /* ページタイトル */
+  .el_pageTitle {
+    /* 位置調節 */
+    top: 175px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* 文字設定 */
+    font-size: 1.875rem;
+  }
+
+  /*----------------------
+    メッセージ
+  ------------------------*/
+  /* メッセージ */
+  .el_msg {
+    /* 文字設定 */
+    font-size: 1.25rem;
+    @include m.lineHeightAdjustment(1.5);
+
+    /* 余白設定 */
+    margin: 0 0 30px 0;
+
+    /* フォント調整 */
+    &::before {
+      margin-top: 0;
+    }
+
+    &::after {
+      margin-bottom: 0;
+    }
+  }
+
+  /*----------------------
+      メディア
+  ------------------------*/
+  /* メディア */
+  .bl_media {
+    display: block;
+  }
+
+  /* メディア（文字のまとまり） */
+  .bl_media_body {
+    width: 100%;
+  }
+
+  /* メディア（文字） */
+  .bl_media_txt {
+    margin-bottom: 30px;
+  }
+
+  /* メディア（画像のラッパー） */
+  .bl_media_imgWrapper {
+    width: 100%;
+
+    /* メディア（画像） */
+    & > img {
+      aspect-ratio: 345 / 150;
+      -o-object-fit: cover;
+      object-fit: cover;
+      -o-object-position: center bottom;
+      object-position: center bottom;
+    }
+  }
+
+  /*----------------------
+      半透明テキスト
+  ------------------------*/
+  /* 半透明テキスト */
+  .el_opacityTxt {
+    /* 文字設定 */
+    font-weight: bold;
+    font-size: 2.5rem;
+    white-space: nowrap;
+  }
+
+  /*----------------------
+    カード
+  ------------------------*/
+  /* 複数カードのまとまり */
+  .bl_cardUnit {
+    & > .bl_card {
+      width: 92.753623%;
+
+      margin-right: auto !important;
+      margin-left: auto;
+    }
+  }
+
+  /*----------------------
+      画像付きリンク
+  ------------------------*/
+  /* 画像付きリンク */
+  .bl_imgLinks {
+    display: block;
+
+    /* 余白設定 */
+    margin-bottom: -30px;
+  }
+
+  /* 画像付きリンク（画像） */
+  .bl_imgLinks_img {
+    /* 余白設定 */
+    margin-bottom: 30px;
+  }
+
+  /* 画像付きリンク（リンク） */
+  .bl_imgLinks_link {
+    /* 文字設定 */
+    font-size: 1.25rem;
+  }
+
+  /*----------------------
+     CTAエリア
+  ------------------------*/
+  /* CTAエリア（文字） */
+  .bl_cta_txt {
+    /* 余白設定 */
+    margin-bottom: 35px;
+  }
+
+  /*----------------------
+    お問い合わせフォーム
+  ------------------------*/
+  /*　お問い合わせフォーム（項目名）　*/
+  .bl_contactForm_ttl {
+    /* 余白設定 */
+    margin: 0 0 12px 0;
+  }
+
+  /* チェックボックスのまとまり */
+  .bl_checkboxUnit {
+    /* 縦並びにする */
+    flex-direction: column;
+    margin-bottom: -4px;
+  }
+
+  /* チェックボックス */
+  .bl_checkbox {
+    margin-bottom: 4px;
+  }
+
+  /*----------------------
+    ヘルパー
+  ------------------------*/
+  /* PC幅でのみ表示 */
+  .lg_only {
+    display: none !important;
+  }
+
+  /* タブレット幅以下でのみ表示 */
+  .md_only {
+    display: block !important;
+  }
+}

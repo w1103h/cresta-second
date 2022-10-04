@@ -1,0 +1,40 @@
+/*------------------------------------------------
+    ファイル名：_mixin.scss
+    機能：mixinを記述する
+--------------------------------------------------*/
+
+/*----------
+    line-heightを調節する（XDとwebで仕様が異なるため） 
+    $line-height: line-heightの指定値
+----------*/
+@mixin lineHeightAdjustment($line-height) {
+    line-height: $line-height;
+
+    &::before {
+        display: block;
+        margin-top: calc(1 - (#{$line-height}) * .5em);
+
+        content: "";
+    }
+
+    &::after {
+        display: block;
+        margin-bottom: calc(1 - (#{$line-height}) * .5em);
+
+        content: "";
+    }
+}
+
+/*----------
+    letter-spacingを調節する（XDとwebで仕様が異なるため） 
+    $letter-spacing: letter-spacingの指定値
+----------*/
+@mixin letterSpacingAdjustment($letter-spacing) {
+    letter-spacing: $letter-spacing;
+
+    &::after {
+        margin-left: -$letter-spacing;
+
+        content: "";
+    }
+}
